@@ -6,6 +6,7 @@ import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import autoprefixer from 'gulp-autoprefixer';
+import cleanCSS from 'gulp-clean-css';
 import fs from 'fs';
 
 // Configurez gulp-sass pour utiliser dart-sass
@@ -15,14 +16,25 @@ const sassCompiler = gulpSass(sass);
 const bs = browserSync.create();
 
 // Compile SCSS into CSS
-gulp.task('css', function() {
-  console.log('Running CSS task');
+gulp.task('scss', function() {
+  console.log('Running SCSS task');
   return gulp.src('./scss/*.scss')
     .pipe(sassCompiler().on('error', sassCompiler.logError))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(gulp.dest('./css'))
+    .pipe(cleanCSS())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('./css'))
+    .pipe(bs.stream());
+});
+
+// Copy CSS files to dist
+gulp.task('css', function() {
+  console.log('Running CSS task');
+  return gulp.src('./css/*.css')
     .pipe(gulp.dest('./dist/css'))
     .pipe(bs.stream());
 });
@@ -46,6 +58,22 @@ gulp.task('html', function() {
     .pipe(bs.stream());
 });
 
+// Copy vendor files to dist
+gulp.task('vendor', function() {
+  console.log('Running Vendor task');
+  return gulp.src('./vendor/**/*')
+    .pipe(gulp.dest('./dist/vendor'))
+    .pipe(bs.stream());
+});
+
+// Copy image files to dist
+gulp.task('images', function() {
+  console.log('Running Images task');
+  return gulp.src('./img/**/*')
+    .pipe(gulp.dest('./dist/img'))
+    .pipe(bs.stream());
+});
+
 // Create _redirects file in dist
 gulp.task('redirects', function(done) {
   console.log('Creating _redirects file');
@@ -63,13 +91,15 @@ gulp.task('browserSync', function() {
 });
 
 // Build task
-gulp.task('build', gulp.series('css', 'js', 'html', 'redirects'));
+gulp.task('build', gulp.series('scss', 'css', 'js', 'html', 'vendor', 'images', 'redirects'));
 
 // Dev task
 gulp.task('dev', gulp.series('build', 'browserSync', function() {
-  gulp.watch('./scss/*.scss', gulp.series('css'));
+  gulp.watch('./scss/*.scss', gulp.series('scss', 'css'));
   gulp.watch('./js/*.js', gulp.series('js'));
   gulp.watch('./*.html', gulp.series('html'));
+  gulp.watch('./vendor/**/*', gulp.series('vendor'));
+  gulp.watch('./img/**/*', gulp.series('images'));
   gulp.watch('./dist/*.html').on('change', bs.reload);
 }));
 
