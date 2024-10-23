@@ -47,7 +47,7 @@
         "gulp-uglify": "^3.0.2"
     },
     "scripts": {
-  "build": "gulp build",
-  "start": "gulp"
-}
+        "build": "gulp build",
+        "start": "gulp"
+    }
 }

@@ -40,8 +40,11 @@ gulp.task('browserSync', function() {
   });
 });
 
+// Build task
+gulp.task('build', gulp.series('css', 'js'));
+
 // Dev task
-gulp.task('dev', gulp.series('css', 'js', 'browserSync', function() {
+gulp.task('dev', gulp.series('build', 'browserSync', function() {
   gulp.watch('./scss/*.scss', gulp.series('css'));
   gulp.watch('./js/*.js', gulp.series('js'));
   gulp.watch('./*.html').on('change', bs.reload);
