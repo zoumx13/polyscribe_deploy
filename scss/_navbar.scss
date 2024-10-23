@@ -1,6 +1,10 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'sass:color';
+
 // Styling for the navbar
 #mainNav {
-  border-bottom: 1px solid fade-out($gray-900, .9);
+  border-bottom: 1px solid color.adjust($gray-900, $alpha: -0.9);
   background-color: $white;
   @include sans-serif-font;
   @include transition-all;
@@ -11,7 +15,7 @@
     @include sans-serif-font;
     &:focus,
     &:hover {
-      color: darken($primary, .1);
+      color: color.adjust($primary, $lightness: -10%);
     }
   }
   .navbar-nav {
@@ -39,7 +43,7 @@
     border-color: transparent;
     background-color: transparent;
     .navbar-brand {
-      color: fade-out($white, .3);
+      color: color.adjust($white, $alpha: -0.3);
       &:focus,
       &:hover {
         color: $white;
@@ -50,19 +54,19 @@
     }
     .navbar-nav > li.nav-item > a.nav-link,
     .navbar-nav > li.nav-item > a.nav-link:focus {
-      color: fade-out($white, .3);
+      color: color.adjust($white, $alpha: -0.3);
       &:hover {
         color: $white;
       }
     }
     &.navbar-shrink {
-      border-bottom: 1px solid fade-out($gray-900, .9);
+      border-bottom: 1px solid color.adjust($gray-900, $alpha: -0.9);
       background-color: $white;
       .navbar-brand {
         color: $primary;
         &:focus,
         &:hover {
-          color: darken($primary, .1);
+          color: color.adjust($primary, $lightness: -10%);
         }
       }
       .navbar-nav > li.nav-item > a.nav-link,

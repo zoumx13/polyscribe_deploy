@@ -1,3 +1,7 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'sass:color';
+
 // Styling for the portfolio section
 .portfolio-box {
   position: relative;
@@ -13,7 +17,7 @@
     text-align: center;
     opacity: 0;
     color: $white;
-    background: fade-out($primary, .1);
+    background: color.adjust($primary, $alpha: -0.1);
     @include transition-all;
     .portfolio-box-caption-content {
       position: absolute;
