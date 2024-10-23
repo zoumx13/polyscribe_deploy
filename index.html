@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>Polyscribe</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,10 +24,72 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
 
+    <title>Exemple de Pop-up</title>
+    <link rel="stylesheet" href="css/creative.min.css"> <!-- Lien vers votre fichier CSS -->
+    <style>
+        /* Styles pour le pop-up */
+        .modal {
+            display: none; /* Caché par défaut */
+            position: fixed; /* Reste en place */
+            z-index: 1; /* Au-dessus de tout */
+            left: 0;
+            top: 0;
+            width: 100%; /* Pleine largeur */
+            height: 100%; /* Pleine hauteur */
+            overflow: auto; /* Ajoute un défilement si nécessaire */
+            background-color: rgba(0, 0, 0, 0.5); /* Fond noir transparent */
+        }
+
+        /* Contenu du pop-up */
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto; /* 15% du haut, centré */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Largeur du pop-up */
+            max-width: 600px; /* Largeur maximale */
+        }
+
+        /* Bouton de fermeture */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
   </head>
 
   <body id="page-top">
 
+    <!--  Script Cookies -->
+    <script>
+      window.addEventListener("load", function() {
+        window.cookieconsent.initialise({
+          palette: {
+            popup: { background: "#000" },
+            button: { background: "#f1d600" }
+          },
+          theme: "classic",
+          content: {
+            message: "Ce site utilise des cookies pour vous garantir la meilleure expérience.",
+            dismiss: "Accepter",
+            link: "En savoir plus",
+            href: "https://www.allaboutcookies.org/"
+          }
+        });
+      });
+    </script>
+  
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -64,9 +126,9 @@
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">En savoir plus</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Qui sommes-nous ?</a>
           </div>
-          <div class="col-lg-8 mx-auto">
+          <div class="col-lg-8 mx-auto ;" style="margin-top: 2vh;">
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Nos services</a>
           </div>
         </div>
@@ -317,8 +379,84 @@
           </a>
           </div>
         </div>
+        <br>
+        <br>
+        <hr class="my-4">
+        <p style="text-align: center; color: #003366;">© 2024 Polyscribe. Tous droits réservés.</p>
+        <a href="#" id="openModal">
+          <p style="text-align: center; color: #003366;">Mentions légales</p>
+        </a>
       </div>
     </section>
+    <!-- Le Pop-up -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Mentions Légales</h2>
+      <br>
+      <p><strong>Éditeur du site : Hazoumé Adrien</strong></p>
+      <p>Nom de l’entreprise : Polyscribe</p>
+      <p>Forme juridique : Entrepreneur individuel</p>
+      <p>Raison sociale : Polyscribe</p>
+      <p>Adresse du siège social : 90, Rue Edmond Rostand - 13006 Marseille</p>
+      <p>Téléphone : 04 96 10 12 80</p>
+      <p>Email : contact@polyscribe.fr</p>
+
+      <p><strong>Directeur de publication</strong></p>
+      <p>Hazoumé Adrien</p>
+
+      <p><strong>Hébergement :</strong></p>
+      <p>Nom de l’hébergeur : Gandi SAS</p>
+      <p>Adresse de l’hébergeur : 63-65 Bd Massena - 75013 Paris</p>
+      <p>Téléphone de l’hébergeur : 01 70 37 76 61</p>
+
+      <p><strong>Numéro SIRET :</strong> 953 444 197 00016</p>
+      <p><strong>Numéro RCS :</strong> Marseille A 953 444 197</p>
+      <p><strong>TVA intracommunautaire :</strong> FR95953444197</p>
+      <p><strong>Protection des données personnelles :</strong> Polyscribe s'engage à respecter la confidentialité des données personnelles. Les informations recueillies par le biais de ce site sont nécessaires pour répondre à vos demandes et sont destinées uniquement à Polyscribe.</p>
+
+      <p><strong>Cookies :</strong> Ce site utilise des cookies pour améliorer l'expérience utilisateur. Pour plus d'informations, veuillez consulter notre <a href="https://www.allaboutcookies.org/"> [Politique de confidentialité]</a></p>
+
+      <p><strong>Droit applicable :</strong> Les présentes mentions légales sont régies par la loi française.</p>
+  </div>
+</div>
+
+<script>
+  // Obtenir le modal
+  var modal = document.getElementById("myModal");
+
+  // Obtenir le lien qui ouvre le modal
+  var btn = document.getElementById("openModal");
+
+  // Obtenir l'élément <span> qui ferme le modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Quand l'utilisateur clique sur le lien, ouvre le modal 
+  btn.onclick = function(event) {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+      modal.style.display = "block"; // Affiche le modal
+  }
+
+  // Quand l'utilisateur clique sur <span> (x), ferme le modal
+  span.onclick = function() {
+      modal.style.display = "none"; // Cache le modal
+  }
+
+  // Quand l'utilisateur clique n'importe où en dehors du modal, le ferme
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none"; // Cache le modal
+      }
+  }
+</script>
+
+      <!-- Script Cookie Consent -->
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+ 
+  
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
