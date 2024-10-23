@@ -28,20 +28,22 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "6.6.0",
         "bootstrap": "5.3.3",
+        "gulp-concat": "^2.6.1",
         "jquery": "3.7.1",
         "jquery.easing": "^1.4.1",
         "magnific-popup": "^1.2.0",
+        "sass": "^1.80.3",
         "sass-embedded": "^1.80.3",
         "scrollreveal": "4.0.9"
     },
     "devDependencies": {
-        "browser-sync": "3.0.3",
+        "browser-sync": "^3.0.3",
         "gulp": "^5.0.0",
-        "gulp-autoprefixer": "9.0.0",
+        "gulp-autoprefixer": "^9.0.0",
         "gulp-clean-css": "4.3.0",
         "gulp-header": "2.0.9",
-        "gulp-rename": "2.0.0",
-        "gulp-sass": "5.1.0",
-        "gulp-uglify": "3.0.2"
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-uglify": "^3.0.2"
     }
 }
