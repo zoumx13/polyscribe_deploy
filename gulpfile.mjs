@@ -1,10 +1,14 @@
 import gulp from 'gulp';
-import sass from 'gulp-sass';
+import * as sass from 'sass';
+import gulpSass from 'gulp-sass';
 import browserSync from 'browser-sync';
 import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import autoprefixer from 'gulp-autoprefixer';
+
+// Configurez gulp-sass pour utiliser dart-sass
+const sassCompiler = gulpSass(sass);
 
 // Créez une instance de browserSync
 const bs = browserSync.create();
@@ -12,7 +16,7 @@ const bs = browserSync.create();
 // Compile SCSS into CSS
 gulp.task('css', function() {
   return gulp.src('./scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions'],
       cascade: false
