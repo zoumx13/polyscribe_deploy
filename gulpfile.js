@@ -1,10 +1,13 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const browserSync = require('browser-sync').create();
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const autoprefixer = require('gulp-autoprefixer');
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import browserSync from 'browser-sync';
+import uglify from 'gulp-uglify';
+import concat from 'gulp-concat';
+import rename from 'gulp-rename';
+import autoprefixer from 'gulp-autoprefixer';
+
+// Créez une instance de browserSync
+const bs = browserSync.create();
 
 // Compile SCSS into CSS
 gulp.task('css', function() {
@@ -15,7 +18,7 @@ gulp.task('css', function() {
       cascade: false
     }))
     .pipe(gulp.dest('./dist/css'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 });
 
 // Minify and concatenate JS
@@ -25,12 +28,12 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./dist/js'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 });
 
 // Static server + watching scss/js/html files
 gulp.task('browserSync', function() {
-  browserSync.init({
+  bs.init({
     server: {
       baseDir: './'
     }
@@ -41,7 +44,7 @@ gulp.task('browserSync', function() {
 gulp.task('dev', gulp.series('css', 'js', 'browserSync', function() {
   gulp.watch('./scss/*.scss', gulp.series('css'));
   gulp.watch('./js/*.js', gulp.series('js'));
-  gulp.watch('./*.html').on('change', browserSync.reload);
+  gulp.watch('./*.html').on('change', bs.reload);
 }));
 
 // Default task
