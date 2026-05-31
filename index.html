@@ -1,497 +1,950 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Polyscribe – Votre expert en impression numérique et secrétariat à Marseille depuis près de 30 ans. Copies, affiches, reliures, plastifications, numérisation.">
+  <title>Polyscribe – Impression & Secrétariat à Marseille</title>
+  <link rel="icon" href="img/FaviconLogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+  <style>
+    :root {
+      --navy: #003366;
+      --navy-dark: #002244;
+      --navy-light: #0a4a8c;
+      --navy-pale: #e8eef5;
+      --gold: #c8a96e;
+      --gold-light: #e8c98e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --text: #1a2035;
+      --text-muted: #6b7280;
+      --border: rgba(0,51,102,0.1);
+    }
 
-  <head>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    html { scroll-behavior: smooth; }
 
-    <title>Polyscribe</title>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
 
-    <!--Favicon-->
-    <link rel="icon" href="img/FaviconLogo.png" type="image/png" />
+    /* ─── NAVBAR ─── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.4s ease;
+    }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 30px rgba(0,51,102,0.1);
+      padding: 0.8rem 2rem;
+    }
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.3s;
+    }
 
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    #navbar.scrolled .nav-brand { color: var(--navy); }
 
-    <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
 
-    <title>Mentions Légales</title>
-    <link rel="stylesheet" href="css/creative.min.css"> <!-- Lien vers votre fichier CSS -->
-    <style>
-        /* Styles pour le pop-up */
-        .modal {
-            display: none; /* Caché par défaut */
-            position: fixed; /* Reste en place */
-            z-index: 1; /* Au-dessus de tout */
-            left: 0;
-            top: 0;
-            width: 100%; /* Pleine largeur */
-            height: 100%; /* Pleine hauteur */
-            overflow: auto; /* Ajoute un défilement si nécessaire */
-            background-color: rgba(0, 0, 0, 0.5); /* Fond noir transparent */
-        }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+      position: relative;
+    }
 
-        /* Contenu du pop-up */
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto; /* 15% du haut, centré */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Largeur du pop-up */
-            max-width: 600px; /* Largeur maximale */
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
 
-        /* Bouton de fermeture */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: #fff; }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-      
-    </style>
+    #navbar.scrolled .nav-links a { color: var(--text-muted); }
+    #navbar.scrolled .nav-links a:hover { color: var(--navy); }
 
-  </head>
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
 
-  <body id="page-top">
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: rgba(255,255,255,0.9);
+      transition: all 0.3s;
+    }
 
-    <!--  Script Cookies -->
-    <script>
-      window.addEventListener("load", function() {
-        window.cookieconsent.initialise({
-          palette: {
-            popup: { background: "#000" },
-            button: { background: "#f1d600" }
-          },
-          theme: "classic",
-          content: {
-            message: "Ce site utilise des cookies pour vous garantir la meilleure expérience.",
-            dismiss: "Accepter",
-            link: "En savoir plus",
-            href: "https://www.allaboutcookies.org/"
-          }
-        });
-      });
-    </script>
-  
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Polyscribe</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-          <!-- NAVBAR GALERIE
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Galerie</a>
-            </li> 
-            -->
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#horaires">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    #navbar.scrolled .nav-toggle span { background: var(--navy); }
 
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <img class="logo" src="img/Logo.png" ; style="max-width :40vh">
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">Mail / Téléphone</a>
-          </div>
-          <div class="col-lg-8 mx-auto ;" style="margin-top: 2vh;">
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Nos services</a>
-          </div>
-                    <div class="col-lg-8 mx-auto ;" style="margin-top: 2vh;">
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#horaires">Horaires</a>
-          </div>
-        </div>
-      </div>
-    </header>
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 75vw;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { color: var(--navy) !important; font-size: 1rem; }
+    }
 
-    <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">Près de 30 ans de savoir-faire<br>au service de nos clients</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Pour vos travaux <strong>d’impression numérique</strong> tous supports (jusqu'à 250g) et tous formats (jusqu'au A0), faites appel au spécialiste.
-              <br>
-              <br>
-              <strong>Polyscribe</strong>, situé à Marseille 6e. Depuis près de 30 ans, nous apportons à nos clients le conseil et l’efficacité pour des supports réussis, qu’il s’agisse de publicités, de documents professionnels ou travaux de secrétariat.
-              <br>
-              <br>
-              </p>
-              <h2 class="section-heading text-white">Particuliers et professionnels</h2>
-              <hr class="light my-4">
-              <p class="text-faded mb-4">Que vous soyez <strong>une entreprise, une administration, une association, un artiste, un étudiant…</strong>, Polyscribe est à l’écoute de vos idées pour créer vos supports de communication ou documents papiers. Avec <strong>notre grande réactivité et nos prix attractifs, nous offrons un service de proximité de qualité</strong>.
-                <br>
-                <br>
-                Pour garantir un résultat conforme aux attentes de nos clients, quel que soit le projet, nous disposons d’un parc machines Canon performant dans nos locaux situés à proximité de <strong>Place Castellane</strong>.
-              <br>
-              <br>
-              Polyscribe, votre expert en impression et secrétariat, toujours à votre service !
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--navy-dark);
+    }
 
-            
-            </p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Nos services</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img/header.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+    }
 
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Nos services</h2>
-            <hr class="my-4">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-copy text-primary mb-3 sr-icon-1"></i>
-              <h3 class="mb-3">Impressions & copies</h3>
-              <p class="text-muted mb-0">A4 et A3. Noir & Blanc et Quadri</p>
-              <p class="text-muted mb-0">A l'unité et gros volume</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-map text-primary mb-3 sr-icon-2"></i>
-              <h3 class="mb-3">Affiches & plans</h3>
-              <p class="text-muted mb-0">Jusqu'au format A0</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-desktop text-primary mb-3 sr-icon-3"></i>
-              <h3 class="mb-3">Numérisation</h3>
-              <p class="text-muted mb-0">Jusqu'au format A3</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-book text-primary mb-3 sr-icon-4"></i>
-              <h3 class="mb-3">Reliures de documents</h3>
-              <p class="text-muted mb-0">Métalliques, plastiques et thermocollées</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-crop-alt text-primary mb-3 sr-icon-1"></i>
-              <h3 class="mb-3">Plastifications</h3>
-              <p class="text-muted mb-0">A5, A4 et A3</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-pen-fancy text-primary mb-3 sr-icon-2"></i>
-              <h3 class="mb-3">Secrétariat</h3>
-              <p class="text-muted mb-0">Facture, devis, CV, dactylographie,...</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-calendar-check text-primary mb-3 sr-icon-3"></i>
-              <h3 class="mb-3">Location de salle</h3>
-              <p class="text-muted mb-0">Réunions, formations, bureau</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-envelope text-primary mb-3 sr-icon-4"></i>
-              <h3 class="mb-3">Petite papéterie</h3>
-              <p class="text-muted mb-0">Enveloppes, chemises,...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,34,68,0.85) 0%, rgba(0,51,102,0.6) 100%);
+    }
 
-<!-- PORTFOLIO
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+    }
 
-      <section class="p-0" id="portfolio">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Plans & affiches
-                  </div>
-                  <div class="project-name">
-                    Jusqu'au A0, noir & blanc et quadri
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Reliures
-                  </div>
-                  <div class="project-name">
-                    Plastiques, métalliques et thermocollées
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Location de salle
-                  </div>
-                  <div class="project-name">
-                    Réunions, formations, bureau
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Numérisation
-                  </div>
-                  <div class="project-name">
-                    Jus'au format A3
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Plastifications
-                  </div>
-                  <div class="project-name">
-                    Jusqu'au format A3
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Secrétariat
-                  </div>
-                  <div class="project-name">
-                    Facture, devis, CV, dactylographie,...
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>  
--->
+    .hero-logo {
+      max-width: 280px;
+      width: 55vw;
+      margin: 0 auto 2.5rem;
+      display: block;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+      animation: fadeInDown 0.8s ease both;
+    }
 
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.8s 0.2s ease both;
+      line-height: 1.5;
+    }
 
-    <section class="bg-primary" id="horaires">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">HORAIRES</h2><hr class="light my-4">
-            <p class="text-faded mb-4">
-              Lundi & Mercredi<br>8h30 - 12h30<br>13h - 17h30<br><br>Mardi, Jeudi & Vendredi<br>8h30 - 12h30<br>13h - 18h30<br><br>Samedi<br>9h - 11h30</p>
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      animation: fadeInUp 0.8s 0.4s ease both;
+    }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
 
-              </p>
-              </p>
-              <h2 class="section-heading text-white">ADRESSE</h2>
-              <hr class="light my-4">
-              <a href="https://www.google.com/maps/dir/?api=1&destination=90+Rue+Edmond+Rostand,+13006+Marseille">
-                <p class="text-faded mb-4">
-                  90, Rue Edmond Rostand<br>13006 Marseille
-              </p>
-              </a>
-              <hr class="light my-4">
-              <img style="max-width: 20vh;" src="img/M1M2T3.png">
-              <br>
-              <p class="text-faded mb-4" style="margin-top: 10px;">
-                Arrêt Castellane
-            </p>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Un renseignement ?</h2>
-            <hr class="my-4">
-            <p class="mb-5">Contactez nous !</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center" href="tel:+33123456789">
-            <a href="tel:+33496101280">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>04 96 10 12 80</p>
-          </a>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <a href="mailto:contact@polyscribe.fr">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>contact@polyscribe.fr
-            </p>
-          </a>
-          </div>
-        </div>
-        <br>
-        <br>
-        <hr class="my-4">
-        <p style="text-align: center; color: #003366;">© 2025 Polyscribe. Tous droits réservés.</p>
-        <a href="#" id="openModal">
-          <p style="text-align: center; color: #003366;">Mentions légales</p>
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(200,169,110,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.9);
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.9);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: bounce 2s infinite;
+      opacity: 0.6;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.8));
+      margin: 0 auto;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 7rem 2rem; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title.light { color: var(--white); }
+
+    .divider {
+      width: 50px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto 2.5rem;
+    }
+
+    .divider.left { margin: 0 0 2.5rem; }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .about-text p strong { color: var(--white); }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(200,169,110,0.4);
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--off-white);
+    }
+
+    .services-header { text-align: center; margin-bottom: 4rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 3px;
+      background: var(--gold);
+      transition: width 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,51,102,0.1);
+      border-color: rgba(0,51,102,0.2);
+    }
+
+    .service-card:hover::before { width: 100%; }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--navy-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--navy);
+    }
+
+    .service-icon i {
+      font-size: 1.6rem;
+      color: var(--navy);
+      transition: color 0.3s;
+    }
+
+    .service-card:hover .service-icon i { color: var(--gold); }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── HORAIRES / INFO ─── */
+    #horaires {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .info-card {
+      padding: 2.5rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .info-card:hover {
+      border-color: rgba(200,169,110,0.4);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .info-card-icon {
+      width: 56px;
+      height: 56px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .info-card-icon i { font-size: 1.3rem; color: var(--gold); }
+
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .info-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.92rem;
+      line-height: 2;
+    }
+
+    .info-card a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .info-card a:hover { color: var(--gold); }
+
+    .transport-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(200,169,110,0.15);
+      border: 1px solid rgba(200,169,110,0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: var(--gold);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .info-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 600px;
+      margin: 3rem auto 0;
+    }
+
+    .contact-card {
+      padding: 2.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--navy);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,51,102,0.1);
+    }
+
+    .contact-card i {
+      font-size: 2rem;
+      color: var(--navy);
+    }
+
+    .contact-card span {
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .contact-grid { grid-template-columns: 1fr; max-width: 300px; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,22,44,0.75);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-box h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .modal-box p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .modal-box p strong { color: var(--text); }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover { color: var(--navy); }
+
+    /* ─── ANIMATIONS ON SCROLL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-brand">Polyscribe</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="img/Logo.png" alt="Polyscribe" class="hero-logo">
+      <p class="hero-tagline">Votre expert en impression numérique<br>et secrétariat à Marseille</p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-phone-alt"></i> Nous contacter
+        </a>
+        <a href="#services" class="btn btn-outline">
+          <i class="fas fa-print"></i> Nos services
+        </a>
+        <a href="#horaires" class="btn btn-outline">
+          <i class="fas fa-clock"></i> Horaires
         </a>
       </div>
-    </section>
-    <!-- Le Pop-up -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <span class="close">&times;</span>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="section-label">Notre histoire</p>
+          <h2 class="section-title light">Près de 30 ans de savoir-faire au service de nos clients</h2>
+          <div class="divider left"></div>
+          <p>Pour vos travaux d'<strong>impression numérique</strong> tous supports (jusqu'à 300g) et tous formats (jusqu'au A0), faites appel au spécialiste.</p>
+          <p><strong>Polyscribe</strong>, situé à Marseille 6e, vous accompagne depuis près de 30 ans avec conseil et efficacité pour des supports réussis : publicités, documents professionnels ou travaux de secrétariat.</p>
+          <p>Que vous soyez <strong>une entreprise, une administration, une association, un artiste ou un étudiant</strong>, Polyscribe est à l'écoute de vos idées. Grande réactivité, prix attractifs et service de proximité de qualité.</p>
+          <p style="margin-top:1.5rem">Pour garantir un résultat conforme à vos attentes, nous disposons d'un <strong>parc machines Canon performant</strong>, à proximité de Place Castellane.</p>
+        </div>
+        <div class="about-stats reveal reveal-delay-2">
+          <div class="stat-card">
+            <div class="stat-number">30</div>
+            <div class="stat-label">Ans d'expérience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">A0</div>
+            <div class="stat-label">Format max</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">300g</div>
+            <div class="stat-label">Support max</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24h</div>
+            <div class="stat-label">Délais express</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="section-label">Ce que nous proposons</p>
+        <h2 class="section-title">Nos services</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon"><i class="fas fa-copy"></i></div>
+          <h3>Impressions & copies</h3>
+          <p>A4 et A3 — Noir & Blanc et Quadri<br>À l'unité et gros volume</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon"><i class="fas fa-map"></i></div>
+          <h3>Affiches & plans</h3>
+          <p>Jusqu'au format A0<br>Noir & Blanc et couleur</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon"><i class="fas fa-desktop"></i></div>
+          <h3>Numérisation</h3>
+          <p>Numérisation de documents<br>Jusqu'au format A3</p>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon"><i class="fas fa-book"></i></div>
+          <h3>Reliures de documents</h3>
+          <p>Métalliques, plastiques<br>et thermocollées</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon"><i class="fas fa-crop-alt"></i></div>
+          <h3>Plastifications</h3>
+          <p>Formats A5, A4 et A3</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+          <h3>Secrétariat</h3>
+          <p>Factures, devis, CV,<br>dactylographie…</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Location de salle</h3>
+          <p>Réunions, formations,<br>bureau</p>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Petite papeterie</h3>
+          <p>Enveloppes, chemises…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORAIRES & ADRESSE -->
+  <section id="horaires">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="section-label">Informations pratiques</p>
+        <h2 class="section-title light">Horaires & Accès</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card reveal reveal-delay-1">
+          <div class="info-card-icon"><i class="fas fa-clock"></i></div>
+          <h3>Horaires</h3>
+          <p>
+            Lundi & Mercredi<br>
+            8h30 – 12h30 / 13h – 17h30<br><br>
+            Mar, Jeu & Vendredi<br>
+            8h30 – 12h30 / 13h – 18h30<br><br>
+            Samedi<br>
+            9h – 11h30
+          </p>
+        </div>
+        <div class="info-card reveal reveal-delay-2">
+          <div class="info-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Adresse</h3>
+          <p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=90+Rue+Edmond+Rostand,+13006+Marseille" target="_blank" rel="noopener">
+              90, Rue Edmond Rostand<br>
+              13006 Marseille
+            </a>
+          </p>
+          <span class="transport-badge"><i class="fas fa-subway"></i> Arrêt Castellane – M1, M2, T3</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label" style="text-align:center">Parlons-nous</p>
+        <h2 class="section-title" style="text-align:center">Un renseignement ?</h2>
+        <div class="divider"></div>
+        <p style="text-align:center; color:var(--text-muted); font-size:1rem;">Notre équipe est disponible pour répondre à toutes vos questions.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+33496101280" class="contact-card reveal reveal-delay-1">
+          <i class="fas fa-phone-alt"></i>
+          <span>04 96 10 12 80</span>
+        </a>
+        <a href="mailto:contact@polyscribe.fr" class="contact-card reveal reveal-delay-2">
+          <i class="fas fa-envelope"></i>
+          <span>contact@polyscribe.fr</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Polyscribe. Tous droits réservés. &nbsp;|&nbsp;
+      <a href="#" id="openModal">Mentions légales</a>
+    </p>
+  </footer>
+
+  <!-- MODAL MENTIONS LÉGALES -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
       <h2>Mentions Légales</h2>
-      <br>
       <p><strong>Éditeur du site : Hazoumé Adrien</strong></p>
-      <p>Nom de l’entreprise : Polyscribe 13</p>
+      <p>Nom de l'entreprise : Polyscribe 13</p>
       <p>Forme juridique : EURL</p>
       <p>Raison sociale : Polyscribe 13</p>
-      <p>Adresse du siège social : 90, Rue Edmond Rostand - 13006 Marseille</p>
+      <p>Adresse du siège social : 90, Rue Edmond Rostand – 13006 Marseille</p>
       <p>Téléphone : 04 96 10 12 80</p>
       <p>Email : contact@polyscribe.fr</p>
-
-      <p><strong>Directeur de publication</strong></p>
-      <p>Hazoumé Adrien</p>
-
-      <p><strong>Hébergement :</strong></p>
-      <p>Nom de l’hébergeur : Gandi SAS</p>
-      <p>Adresse de l’hébergeur : 63-65 Bd Massena - 75013 Paris</p>
-      <p>Téléphone de l’hébergeur : 01 70 37 76 61</p>
-
+      <p><strong>Directeur de publication :</strong> Hazoumé Adrien</p>
+      <p><strong>Hébergement :</strong><br>
+        Gandi SAS – 63-65 Bd Massena, 75013 Paris – Tél. : 01 70 37 76 61
+      </p>
       <p><strong>Numéro SIRET :</strong> 939 237 491 00013</p>
       <p><strong>Numéro RCS :</strong> Marseille B 939 237 491</p>
       <p><strong>TVA intracommunautaire :</strong> FR 31 939237491</p>
       <p><strong>Protection des données personnelles :</strong> Polyscribe s'engage à respecter la confidentialité des données personnelles. Les informations recueillies par le biais de ce site sont nécessaires pour répondre à vos demandes et sont destinées uniquement à Polyscribe.</p>
-
-      <p><strong>Cookies :</strong> Ce site utilise des cookies pour améliorer l'expérience utilisateur. Pour plus d'informations, veuillez consulter notre <a href="https://www.allaboutcookies.org/"> [Politique de confidentialité]</a></p>
-
+      <p><strong>Cookies :</strong> Ce site utilise des cookies pour améliorer l'expérience utilisateur. <a href="https://www.allaboutcookies.org/" target="_blank" rel="noopener">En savoir plus</a>.</p>
       <p><strong>Droit applicable :</strong> Les présentes mentions légales sont régies par la loi française.</p>
+    </div>
   </div>
-</div>
 
-<script>
-  // Obtenir le modal
-  var modal = document.getElementById("myModal");
-
-  // Obtenir le lien qui ouvre le modal
-  var btn = document.getElementById("openModal");
-
-  // Obtenir l'élément <span> qui ferme le modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // Quand l'utilisateur clique sur le lien, ouvre le modal 
-  btn.onclick = function(event) {
-      event.preventDefault(); // Empêche le comportement par défaut du lien
-      modal.style.display = "block"; // Affiche le modal
-  }
-
-  // Quand l'utilisateur clique sur <span> (x), ferme le modal
-  span.onclick = function() {
-      modal.style.display = "none"; // Cache le modal
-  }
-
-  // Quand l'utilisateur clique n'importe où en dehors du modal, le ferme
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none"; // Cache le modal
-      }
-  }
-</script>
-
-      <!-- Script Cookie Consent -->
+  <!-- COOKIE CONSENT -->
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
- 
-  
+  <script>
+    // ── Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
 
+    // ── Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    // ── Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    // ── Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
 
-    <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+    // ── Modal mentions légales
+    const overlay = document.getElementById('modalOverlay');
+    document.getElementById('openModal').addEventListener('click', e => {
+      e.preventDefault(); overlay.classList.add('open');
+    });
+    document.getElementById('modalClose').addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
 
-  </body>
+    // ── Cookie consent
+    window.addEventListener('load', () => {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: { background: '#002244' },
+          button: { background: '#c8a96e', text: '#002244' }
+        },
+        theme: 'classic',
+        content: {
+          message: 'Ce site utilise des cookies pour vous garantir la meilleure expérience.',
+          dismiss: 'Accepter',
+          link: 'En savoir plus',
+          href: 'https://www.allaboutcookies.org/'
+        }
+      });
+    });
+  </script>
 
+</body>
 </html>
