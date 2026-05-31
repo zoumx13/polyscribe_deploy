@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Polyscribe – Votre expert en impression numérique et secrétariat à Marseille depuis près de 30 ans. Copies, affiches, reliures, plastifications, numérisation.">
+  <meta name="description" content="Polyscribe – Votre expert en impression numérique et secrétariat à Marseille depuis près de 30 ans. Copies, affiches, reliures, plastifications, numérisation, grands formats.">
   <title>Polyscribe – Impression & Secrétariat à Marseille</title>
   <link rel="icon" href="img/FaviconLogo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -458,6 +458,50 @@
       color: var(--white);
     }
 
+    .hours-list {
+  margin-top: 1.5rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  text-align: left;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-row span:first-child {
+  color: var(--white);
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.hours-row span:last-child {
+  color: rgba(255,255,255,0.75);
+  text-align: right;
+  line-height: 1.5;
+}
+
+.opening-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  padding: 0.5rem 1rem;
+  background: rgba(200,169,110,0.15);
+  border: 1px solid rgba(200,169,110,0.3);
+  border-radius: 20px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
     .info-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -692,7 +736,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="img/Logo.png" alt="Polyscribe" class="hero-logo">
-      <p class="hero-tagline">Votre expert en impression numérique<br>et secrétariat à Marseille</p>
+      <p class="hero-tagline">Impression et secrétariat<br>à Marseille</p>
       <div class="hero-cta-group">
         <a href="#contact" class="btn btn-primary">
           <i class="fas fa-phone-alt"></i> Nous contacter
@@ -718,7 +762,7 @@
           <div class="divider left"></div>
           <p>Pour vos travaux d'<strong>impression numérique</strong> tous supports (jusqu'à 300g) et tous formats (jusqu'au A0), faites appel au spécialiste.</p>
           <p><strong>Polyscribe</strong>, situé à Marseille 6e, vous accompagne depuis près de 30 ans avec conseil et efficacité pour des supports réussis : publicités, documents professionnels ou travaux de secrétariat.</p>
-          <p>Que vous soyez <strong>une entreprise, une administration, une association, un artiste ou un étudiant</strong>, Polyscribe est à l'écoute de vos idées. Grande réactivité, prix attractifs et service de proximité de qualité.</p>
+          <p>Que vous soyez <strong>un particulier, une entreprise, une administration, une association, un artiste ou un étudiant</strong>, Polyscribe est à l'écoute de vos idées. Grande réactivité, prix attractifs et service de proximité de qualité.</p>
           <p style="margin-top:1.5rem">Pour garantir un résultat conforme à vos attentes, nous disposons d'un <strong>parc machines Canon performant</strong>, à proximité de Place Castellane.</p>
         </div>
         <div class="about-stats reveal reveal-delay-2">
@@ -808,14 +852,27 @@
         <div class="info-card reveal reveal-delay-1">
           <div class="info-card-icon"><i class="fas fa-clock"></i></div>
           <h3>Horaires</h3>
-          <p>
-            Lundi & Mercredi<br>
-            8h30 – 12h30 / 13h – 17h30<br><br>
-            Mar, Jeu & Vendredi<br>
-            8h30 – 12h30 / 13h – 18h30<br><br>
-            Samedi<br>
-            9h – 11h30
-          </p>
+<div class="hours-list">
+  <div class="hours-row">
+    <span>Lun. & Mer.</span>
+    <span>8h30–12h30<br>13h–17h30</span>
+  </div>
+
+  <div class="hours-row">
+    <span>Mar., Jeu. & Ven.</span>
+    <span>8h30–12h30<br>13h–18h30</span>
+  </div>
+
+  <div class="hours-row">
+    <span>Samedi</span>
+    <span>9h–11h30</span>
+  </div>
+</div>
+
+<div class="opening-badge">
+  <i class="fas fa-check-circle"></i>
+  Ouvert le samedi
+</div>
         </div>
         <div class="info-card reveal reveal-delay-2">
           <div class="info-card-icon"><i class="fas fa-map-marker-alt"></i></div>
