@@ -1073,23 +1073,33 @@ plans couleur et noir et blanc</p>
         <div class="divider"></div>
       </div>
       <div class="info-grid">
-        <div class="info-card" style="border-color:var(--border);" reveal reveal-delay-1">
-          <div class="info-card" style="border-color:var(--border);"-icon"><i class="fas fa-clock"></i></div>
-          <h3 style="color:var(--navy);">Horaires</h3>
-<div class="hours-list">
-  <div class="hours-row">
-    <span>Lun. & Mer.</span>
-    <span>8h30–12h30<br>13h–17h30</span>
+ <div class="info-card" style="border-color:var(--border);" class="reveal reveal-delay-1">
+  <div class="info-card-icon">
+    <i class="fas fa-clock"></i>
   </div>
 
-  <div class="hours-row">
-    <span>Mar., Jeu. & Ven.</span>
-    <span>8h30–12h30<br>13h–18h30</span>
+  <h3 style="color:var(--navy);">Horaires</h3>
+
+  <div class="hours-list">
+    <div class="hours-row">
+      <span>Lun. & Mer.</span>
+      <span>8h30–12h30<br>13h–17h30</span>
+    </div>
+
+    <div class="hours-row">
+      <span>Mar., Jeu. & Ven.</span>
+      <span>8h30–12h30<br>13h–18h30</span>
+    </div>
+
+    <div class="hours-row">
+      <span>Samedi</span>
+      <span>9h–11h30</span>
+    </div>
   </div>
 
-  <div class="hours-row">
-    <span>Samedi</span>
-    <span>9h–11h30</span>
+  <div class="opening-badge">
+    <i class="fas fa-check-circle"></i>
+    Ouvert le samedi
   </div>
 </div>
 
@@ -1098,25 +1108,26 @@ plans couleur et noir et blanc</p>
   Ouvert le samedi
 </div>
         </div>
-        <div class="info-card" style="border-color:var(--border);" reveal reveal-delay-2">
-          <div class="info-card" style="border-color:var(--border);"-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3 style="color:var(--navy);">Adresse</h3>
-          <p>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=90+Rue+Edmond+Rostand,+13006+Marseille" target="_blank" rel="noopener">
-              90, Rue Edmond Rostand<br>
-              13006 Marseille
-            </a>
+        <div class="info-card" style="border-color:var(--border);" class="reveal reveal-delay-2">
+  <div class="info-card-icon">
+    <i class="fas fa-map-marker-alt"></i>
+  </div>
 
-          </p>
-            <br>
-            <div class="hours-row">
-            </div>
-          <br>
-          <br>
-            <img src="img/M1M2T3.png" alt="Accès métro et tramway Castellane reprographie Polyscribe Marseille" class="hero-logo" loading="lazy">
-          <br>
-          <span class="transport-badge"><i class="fas fa-subway"></i> Arrêt Castellane</span>
-        </div>
+  <h3 style="color:var(--navy);">Adresse</h3>
+
+  <p>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=90+Rue+Edmond+Rostand,+13006+Marseille" target="_blank" rel="noopener">
+      90, Rue Edmond Rostand<br>
+      13006 Marseille
+    </a>
+  </p>
+
+  <img src="img/M1M2T3.png" alt="Accès métro et tramway Castellane reprographie Polyscribe Marseille" class="hero-logo" loading="lazy">
+
+  <span class="transport-badge">
+    <i class="fas fa-subway"></i> Arrêt Castellane
+  </span>
+</div>
       </div>
     </div>
     </section>
@@ -1326,7 +1337,5 @@ plans couleur et noir et blanc</p>
       });
     });
   </script>
-
-</body>
 </body>
 </html>
