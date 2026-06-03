@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Polyscribe Marseille 13006 : impression et reliure de conclusions, mémoires juridiques, dossiers de plaidoirie pour avocats et professions du droit. Discrétion, réactivité, proche Palais de Justice.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Reprographie Avocats Marseille | Polyscribe">
+  <meta property="og:description" content="Polyscribe Marseille 13006 : impression et reliure de conclusions, mémoires juridiques, dossiers de plaidoirie pour avocats et professions du droit. Discrétion, réactivité, proche Palais de Justice.">
+  <meta property="og:url" content="https://www.polyscribe.fr/avocats.html">
+  <meta property="og:image" content="https://www.polyscribe.fr/img/Logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#003366">
+  <title>Reprographie Avocats Professions Juridiques Marseille | Polyscribe</title>
+  <link rel="icon" href="img/FaviconLogo.webp" type="image/png">
+  <link rel="canonical" href="https://www.polyscribe.fr/avocats.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+  <style>
+    :root{--navy:#003366;--navy-dark:#002244;--navy-light:#0a4a8c;--navy-pale:#e8eef5;--gold:#c8a96e;--gold-light:#e8c98e;--white:#fff;--off-white:#f8f7f4;--text:#1a2035;--text-muted:#6b7280;--border:rgba(0,51,102,0.1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s ease;}
+    #navbar.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 30px rgba(0,51,102,0.1);padding:0.8rem 2rem;}
+    .nav-brand{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:rgba(255,255,255,0.9);text-decoration:none;letter-spacing:0.02em;transition:color 0.3s;}
+    #navbar.scrolled .nav-brand{color:var(--navy);}
+    .nav-links{display:flex;list-style:none;gap:2.5rem;align-items:center;}
+    .nav-links a{font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.8);text-decoration:none;transition:color 0.3s;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width 0.3s;}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+    .nav-links a:hover{color:#fff;}
+    #navbar.scrolled .nav-links a{color:var(--text-muted);}
+    #navbar.scrolled .nav-links a:hover{color:var(--navy);}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+    .nav-toggle span{display:block;width:24px;height:2px;background:rgba(255,255,255,0.9);transition:all 0.3s;}
+    #navbar.scrolled .nav-toggle span{background:var(--navy);}
+    @media(max-width:768px){
+      .nav-toggle{display:flex;}
+      .nav-links{position:fixed;top:0;right:-100%;width:75vw;max-width:300px;height:100vh;background:var(--white);flex-direction:column;justify-content:center;gap:2rem;padding:2rem;transition:right 0.4s ease;box-shadow:-10px 0 40px rgba(0,0,0,0.1);}
+      .nav-links.open{right:0;}
+      .nav-links a{color:var(--navy)!important;font-size:1rem;}
+    }
+    /* BOUTONS */
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:3px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;transition:all 0.3s ease;cursor:pointer;border:none;}
+    .btn-primary{background:var(--gold);color:var(--navy-dark);}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,169,110,0.4);}
+    .btn-outline{background:transparent;color:rgba(255,255,255,0.9);border:1.5px solid rgba(255,255,255,0.5);}
+    .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.9);color:#fff;transform:translateY(-2px);}
+    /* LAYOUT */
+    section{padding:7rem 2rem;}
+    .container{max-width:1100px;margin:0 auto;}
+    .section-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:0.75rem;display:block;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:1.5rem;}
+    .section-title.light{color:var(--white);}
+    .divider{width:50px;height:3px;background:var(--gold);margin:0 auto 2.5rem;}
+    .divider.left{margin:0 0 2.5rem;}
+    /* ANIMATIONS */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .reveal-delay-1{transition-delay:0.1s;}.reveal-delay-2{transition-delay:0.2s;}.reveal-delay-3{transition-delay:0.3s;}.reveal-delay-4{transition-delay:0.4s;}
+    /* BREADCRUMB */
+    .breadcrumb{background:var(--navy);padding:0.8rem 2rem;font-size:0.78rem;padding-top:5.2rem;}
+    .breadcrumb-inner{max-width:1100px;margin:0 auto;display:flex;gap:0.5rem;align-items:center;color:rgba(255,255,255,0.5);}
+    .breadcrumb-inner a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+    .breadcrumb-inner a:hover{color:var(--gold);}
+    .breadcrumb-inner span{color:rgba(255,255,255,0.3);}
+    .breadcrumb-inner .current{color:var(--gold);}
+    /* FOOTER */
+    footer{background:var(--navy-dark);color:rgba(255,255,255,0.5);text-align:center;padding:2rem;font-size:0.82rem;}
+    footer a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+    footer a:hover{color:var(--gold);}
+    /* MODAL */
+    .modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,22,44,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem;}
+    .modal-overlay.open{display:flex;}
+    .modal-box{background:var(--white);border-radius:8px;padding:2.5rem;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-box h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1.5rem;font-size:1.5rem;}
+    .modal-box p{font-size:0.88rem;line-height:1.7;margin-bottom:0.7rem;color:var(--text-muted);}
+    .modal-box p strong{color:var(--text);}
+    .modal-close{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);transition:color 0.2s;width:32px;height:32px;display:flex;align-items:center;justify-content:center;}
+    .modal-close:hover{color:var(--navy);}
+    /* LANDING PAGES */
+    .lp-hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--navy-dark);}
+    .lp-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.22;}
+    .lp-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,34,68,0.92) 0%,rgba(0,51,102,0.65) 100%);}
+    .lp-hero-content{position:relative;z-index:2;text-align:center;padding:6rem 2rem 3rem;max-width:860px;}
+    .lp-hero-icon{width:80px;height:80px;border:2px solid rgba(200,169,110,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;}
+    .lp-hero-icon i{font-size:2rem;color:var(--gold);}
+    .lp-hero-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.25em;color:var(--gold);margin-bottom:1rem;}
+    .lp-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:1.2rem;}
+    .lp-hero-sub{font-size:clamp(1rem,2.5vw,1.15rem);color:rgba(255,255,255,0.82);line-height:1.7;margin-bottom:2.5rem;max-width:680px;margin-left:auto;margin-right:auto;}
+    .lp-hero-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+    .scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;animation:bounce 2s infinite;opacity:0.6;}
+    .scroll-indicator span{display:block;width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.8));margin:0 auto;}
+    /* INTRO */
+    .lp-intro{background:var(--white);}
+    .lp-intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;}
+    .lp-intro-text p{color:var(--text-muted);line-height:1.85;margin-bottom:1.2rem;font-size:1rem;}
+    .lp-intro-text p strong{color:var(--text);}
+    .lp-intro-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .lp-stat{background:var(--off-white);border:1px solid var(--border);border-radius:6px;padding:1.8rem 1.2rem;text-align:center;transition:all 0.3s;}
+    .lp-stat:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,51,102,0.08);}
+    .lp-stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:0.4rem;}
+    .lp-stat-label{font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
+    @media(max-width:768px){.lp-intro-grid{grid-template-columns:1fr;gap:2.5rem;}}
+    /* SERVICES */
+    .lp-services{background:var(--off-white);}
+    .services-header{text-align:center;margin-bottom:1rem;}
+    .lp-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3.5rem;}
+    .lp-service-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:all 0.35s;}
+    .lp-service-card::after{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.35s;}
+    .lp-service-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,51,102,0.1);border-color:rgba(0,51,102,0.2);}
+    .lp-service-card:hover::after{height:100%;}
+    .lp-service-card-icon{width:52px;height:52px;background:var(--navy-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;transition:all 0.3s;}
+    .lp-service-card:hover .lp-service-card-icon{background:var(--navy);}
+    .lp-service-card-icon i{font-size:1.4rem;color:var(--navy);transition:color 0.3s;}
+    .lp-service-card:hover .lp-service-card-icon i{color:var(--gold);}
+    .lp-service-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.6rem;}
+    .lp-service-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.65;}
+    /* WHY — fond navy */
+    .lp-why{background:var(--navy);}
+    .lp-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;}
+    .lp-why-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;}
+    .lp-why-card:hover{background:rgba(255,255,255,0.09);border-color:rgba(200,169,110,0.35);transform:translateY(-3px);}
+    .lp-why-card i{font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;}
+    .lp-why-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:0.6rem;}
+    .lp-why-card p{font-size:0.86rem;color:rgba(255,255,255,0.65);line-height:1.65;}
+    @media(max-width:768px){.lp-why-grid{grid-template-columns:1fr;}}
+    /* FAQ visuelle */
+    .lp-faq{background:var(--white);}
+    .lp-faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:1rem;max-width:780px;}
+    .lp-faq-item{border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+    .lp-faq-q{padding:1.2rem 1.5rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--white);transition:background 0.2s;}
+    .lp-faq-q:hover{background:var(--navy-pale);}
+    .lp-faq-q i{font-size:0.75rem;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+    .lp-faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s ease;}
+    .lp-faq-item.open .lp-faq-a{max-height:200px;padding:0 1.5rem 1.2rem;}
+    .lp-faq-item.open .lp-faq-q i{transform:rotate(180deg);}
+    .lp-faq-a p{font-size:0.92rem;color:var(--text-muted);line-height:1.7;}
+    /* SEO texte */
+    .lp-seo{background:var(--off-white);}
+    .lp-seo p{margin-bottom:1.2rem;color:var(--text-muted);line-height:1.85;font-size:0.98rem;max-width:820px;}
+    .lp-seo h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-top:2.5rem;margin-bottom:0.75rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);}
+    /* CTA BAND */
+    .lp-cta-band{background:var(--navy-dark);text-align:center;padding:5rem 2rem;}
+    .lp-cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;margin-bottom:1rem;}
+    .lp-cta-band p{color:rgba(255,255,255,0.7);margin-bottom:2.5rem;font-size:1rem;max-width:580px;margin-left:auto;margin-right:auto;}
+    .lp-cta-group{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+</style>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":["LocalBusiness","PrintShop"],
+  "name":"Polyscribe",
+  "url":"https://www.polyscribe.fr",
+  "telephone":"+33496101280",
+  "email":"contact@polyscribe.fr",
+  "address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"},
+  "geo":{"@type":"GeoCoordinates","latitude":43.2855,"longitude":5.3845},
+  "image":"https://www.polyscribe.fr/img/Logo.webp",
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday"],"opens":"08:30","closes":"17:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday","Friday"],"opens":"08:30","closes":"18:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:30"}
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Imprimez-vous des conclusions et dossiers de plaidoirie à Marseille ?",
+     "acceptedAnswer":{"@type":"Answer","text":"Oui, Polyscribe imprime et relie les conclusions, mémoires en défense et dossiers de plaidoirie pour les avocats du barreau de Marseille. Service rapide et confidentiel."}},
+    {"@type":"Question","name":"Pouvez-vous imprimer en urgence pour une audience ?",
+     "acceptedAnswer":{"@type":"Answer","text":"Oui, nous traitons les urgences d'audience. Envoyez vos fichiers par email, venez récupérer votre dossier imprimé et relié dans la journée."}},
+    {"@type":"Question","name":"Êtes-vous proches du Palais de Justice de Marseille ?",
+     "acceptedAnswer":{"@type":"Answer","text":"Oui, situés au 90 rue Edmond Rostand, Marseille 13006, à quelques minutes du Palais de Justice via la station Castellane (M1)."}},
+    {"@type":"Question","name":"Garantissez-vous la confidentialité des documents juridiques ?",
+     "acceptedAnswer":{"@type":"Answer","text":"Oui, tous les documents juridiques sont traités avec la discrétion et la confidentialité qu'exige votre profession."}}
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">Polyscribe</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">À propos</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#clients">Nos clients</a></li>
+      <li><a href="index.html#horaires">Horaires</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <span class="current">Avocats & Professions juridiques</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-hero-bg" style="background-image:url('img/header.jpg');"></div>
+    <div class="lp-hero-overlay"></div>
+    <div class="lp-hero-content">
+      <div class="lp-hero-icon"><i class="fas fa-gavel"></i></div>
+      <span class="lp-hero-label">Avocats & Professions juridiques</span>
+      <h1 class="lp-hero-title">Reprographie pour avocats à Marseille</h1>
+      <p class="lp-hero-sub">Conclusions, mémoires en défense, dossiers de plaidoirie, pièces contradictoires — impression et reliure professionnelles avec discrétion et réactivité. Proche du Palais de Justice, Marseille 13006.</p>
+      <div class="lp-hero-cta">
+        <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 04 96 10 12 80</a>
+        <a href="mailto:contact@polyscribe.fr" class="btn btn-outline"><i class="fas fa-envelope"></i> contact@polyscribe.fr</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
+
+  <!-- INTRO + STATS — fond blanc -->
+  <section class="lp-intro">
+    <div class="container">
+      <div class="lp-intro-grid">
+        <div class="lp-intro-text reveal">
+          <span class="section-label">Avocats & Professions juridiques</span>
+          <h2 class="section-title">Reprographie pour avocats à Marseille</h2>
+          <div class="divider left"></div>
+          <p><strong>Polyscribe</strong> est le prestataire de reprographie de nombreux cabinets d'avocats, huissiers, notaires et experts judiciaires de Marseille depuis 30 ans.</p>
+<p>Nous comprenons les exigences de votre métier : précision dans la pagination, qualité de rendu, <strong>réactivité pour les urgences</strong> et confidentialité absolue.</p>
+<p>Situés à <strong>Castellane (M1)</strong>, à quelques minutes du Palais de Justice de Marseille.</p>
+        </div>
+        <div class="lp-intro-visual">
+          <div class="lp-stat reveal reveal-delay-1"><div class="lp-stat-num">Express</div><div class="lp-stat-label">Même jour</div></div>
+<div class="lp-stat reveal reveal-delay-2"><div class="lp-stat-num">Reliure</div><div class="lp-stat-label">3 types</div></div>
+<div class="lp-stat reveal reveal-delay-3"><div class="lp-stat-num">Discret</div><div class="lp-stat-label">Confidentiel</div></div>
+<div class="lp-stat reveal reveal-delay-4"><div class="lp-stat-num">30 ans</div><div class="lp-stat-label">D'expérience</div></div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES — fond off-white -->
+  <section class="lp-services">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label">Ce que nous faisons pour vous</span>
+        <h2 class="section-title">Nos prestations pour avocats & professions juridiques</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="lp-services-grid">
+        <div class="lp-service-card reveal reveal-delay-1"><div class="lp-service-card-icon"><i class="fas fa-gavel"></i></div><h3>Conclusions & mémoires</h3><p>Impression de conclusions, mémoires en défense, mémoires ampliatifs pour toutes juridictions.</p></div>
+<div class="lp-service-card reveal reveal-delay-2"><div class="lp-service-card-icon"><i class="fas fa-folder-open"></i></div><h3>Dossiers de plaidoirie</h3><p>Reliure de dossiers complets avec intercalaires, onglets et couverture professionnelle.</p></div>
+<div class="lp-service-card reveal reveal-delay-3"><div class="lp-service-card-icon"><i class="fas fa-copy"></i></div><h3>Pièces contradictoires</h3><p>Reproduction en plusieurs exemplaires pour communication aux parties.</p></div>
+<div class="lp-service-card reveal reveal-delay-4"><div class="lp-service-card-icon"><i class="fas fa-file-contract"></i></div><h3>Actes & contrats</h3><p>Impression de contrats, actes de procédure, assignations et pièces annexes.</p></div>
+<div class="lp-service-card reveal reveal-delay-1"><div class="lp-service-card-icon"><i class="fas fa-book"></i></div><h3>Reliure de dossiers</h3><p>Spirale, plastique ou thermocollée pour dossiers de fond et mémoires.</p></div>
+<div class="lp-service-card reveal reveal-delay-2"><div class="lp-service-card-icon"><i class="fas fa-desktop"></i></div><h3>Numérisation</h3><p>Numérisation de pièces papier pour constitution de dossiers numériques.</p></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI POLYSCRIBE — fond navy -->
+  <section class="lp-why">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label" style="color:var(--gold)">Pourquoi nous choisir</span>
+        <h2 class="section-title light">Polyscribe, votre partenaire de confiance à Marseille</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="lp-why-grid">
+        <div class="lp-why-card reveal reveal-delay-1"><i class="fas fa-lock"></i><h3>Discrétion absolue</h3><p>Tous vos documents traités avec la confidentialité que votre profession exige.</p></div>
+<div class="lp-why-card reveal reveal-delay-2"><i class="fas fa-bolt"></i><h3>Urgences audience</h3><p>Plaidoirie demain ? Nous nous adaptons à vos impératifs de délai.</p></div>
+<div class="lp-why-card reveal reveal-delay-3"><i class="fas fa-map-marker-alt"></i><h3>Proche Palais de Justice</h3><p>Castellane (M1) — quelques minutes à pied du Palais de Justice de Marseille.</p></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ VISUELLE — fond blanc, accordéon -->
+  <section class="lp-faq">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Questions fréquentes</span>
+        <h2 class="section-title">Tout ce que vous devez savoir</h2>
+        <div class="divider left"></div>
+      </div>
+      <div class="lp-faq-list">
+        <div class="lp-faq-item">
+          <div class="lp-faq-q">Imprimez-vous des conclusions et dossiers de plaidoirie ?<i class="fas fa-chevron-down"></i></div>
+          <div class="lp-faq-a"><p>Oui — conclusions, mémoires en défense, dossiers avec intercalaires. Service rapide et confidentiel.</p></div>
+        </div>
+<div class="lp-faq-item">
+          <div class="lp-faq-q">Pouvez-vous imprimer en urgence pour une audience ?<i class="fas fa-chevron-down"></i></div>
+          <div class="lp-faq-a"><p>Oui. Envoyez vos fichiers par email, nous imprimons et relions votre dossier dans la journée.</p></div>
+        </div>
+<div class="lp-faq-item">
+          <div class="lp-faq-q">Êtes-vous proches du Palais de Justice de Marseille ?<i class="fas fa-chevron-down"></i></div>
+          <div class="lp-faq-a"><p>Oui — 90 rue Edmond Rostand, Castellane (M1), à quelques minutes du Palais de Justice.</p></div>
+        </div>
+<div class="lp-faq-item">
+          <div class="lp-faq-q">Garantissez-vous la confidentialité des documents ?<i class="fas fa-chevron-down"></i></div>
+          <div class="lp-faq-a"><p>Oui, tous les documents juridiques sont traités avec la discrétion absolue que votre profession exige.</p></div>
+        </div>
+<div class="lp-faq-item">
+          <div class="lp-faq-q">Proposez-vous la numérisation de pièces papier ?<i class="fas fa-chevron-down"></i></div>
+          <div class="lp-faq-a"><p>Oui, numérisation jusqu'au format A3 pour constitution de dossiers numériques ou transmission électronique.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO LONG TEXT — fond off-white -->
+  <section class="lp-seo">
+    <div class="container reveal">
+      <span class="section-label">Reprographie Marseille 13006</span>
+      <h2 class="section-title">Reprographie pour avocats à Marseille</h2>
+      <div class="divider left"></div>
+      <h3>Reprographie juridique à Marseille</h3>
+<p>Polyscribe est le prestataire de reprographie de nombreux cabinets d'avocats, huissiers, notaires et experts judiciaires de Marseille depuis 30 ans. Nous comprenons les exigences de votre métier : précision dans la pagination, qualité de rendu, réactivité pour les urgences et confidentialité absolue.</p>
+<p>Qu'il s'agisse d'imprimer 3 exemplaires de conclusions de 200 pages pour une audience du lendemain ou de relier un dossier de fond complet pour une cour d'appel, Polyscribe assure.</p>
+<h3>Impression de conclusions et dossiers de plaidoirie</h3>
+<p>Les avocats au barreau de Marseille nous confient régulièrement l'impression et la reliure de leurs conclusions, mémoires ampliatifs et dossiers de plaidoirie. Nous respectons la mise en page de vos documents Word ou PDF et assurons une impression fidèle.</p>
+<p>Pour les dossiers avec onglets et intercalaires, nous pouvons préparer une maquette avant impression sur demande.</p>
+<h3>Proximité avec le Palais de Justice de Marseille</h3>
+<p>Notre reprographie est idéalement située au 90 rue Edmond Rostand, à quelques minutes du Palais de Justice de Marseille, accessible via la station Castellane du métro M1. Pour les urgences, envoyez vos fichiers par email à contact@polyscribe.fr et venez récupérer votre dossier relié.</p>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL — fond navy dark -->
+  <section class="lp-cta-band">
+    <div class="container reveal">
+      <h2>Une audience demain matin ?</h2>
+      <p>Envoyez vos fichiers ce soir, récupérez votre dossier relié dès l'ouverture.</p>
+      <div class="lp-cta-group">
+        <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 04 96 10 12 80</a>
+        <a href="mailto:contact@polyscribe.fr" class="btn btn-outline"><i class="fas fa-envelope"></i> Écrire un email</a>
+        <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Polyscribe. Tous droits réservés. &nbsp;|&nbsp;
+      <a href="#" id="openModal">Mentions légales</a> &nbsp;|&nbsp;
+      <a href="index.html">Accueil</a>
+    </p>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+      <h2>Mentions Légales</h2>
+      <p><strong>Éditeur du site : Hazoumé Adrien</strong></p>
+      <p>Nom de l'entreprise : Polyscribe 13 — Forme juridique : EURL</p>
+      <p>Adresse : 90, Rue Edmond Rostand – 13006 Marseille</p>
+      <p>Tél. : 04 96 10 12 80 — contact@polyscribe.fr</p>
+      <p><strong>SIRET :</strong> 939 237 491 00013 | <strong>RCS :</strong> Marseille B 939 237 491</p>
+      <p><strong>TVA intracommunautaire :</strong> FR 31 939237491</p>
+      <p><strong>Hébergement :</strong> Gandi SAS – 63-65 Bd Massena, 75013 Paris</p>
+      <p><strong>Droit applicable :</strong> Loi française.</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    // FAQ accordion
+    document.querySelectorAll('.lp-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+    const overlay = document.getElementById('modalOverlay');
+    document.getElementById('openModal').addEventListener('click', e => { e.preventDefault(); overlay.classList.add('open'); });
+    document.getElementById('modalClose').addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.addEventListener('click', e => { if(e.target===overlay) overlay.classList.remove('open'); });
+    window.addEventListener('load', () => window.cookieconsent.initialise({
+      palette:{ popup:{background:'#002244'}, button:{background:'#c8a96e',text:'#002244'} },
+      theme:'classic',
+      content:{ message:'Ce site utilise des cookies pour vous garantir la meilleure expérience.', dismiss:'Accepter', link:'En savoir plus', href:'https://www.allaboutcookies.org/' }
+    }));
+  </script>
+</body>
+</html>
