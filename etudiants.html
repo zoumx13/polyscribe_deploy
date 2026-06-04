@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Impression et reliure de mémoires, thèses et rapports à Marseille 13006. Tarifs étudiants sur carte. Reliure spirale, plastique ou métallique. Même jour. Ouvert samedi. Métro Castellane. ☎ 04 96 10 12 80">
+  <meta name="description" content="Impression et reliure de mémoires & thèses à Marseille 13006 — tarifs étudiants La Timone, Luminy, AMU. Reliure spirale. Même jour. Ouvert samedi. Métro Castellane. ☎ 04 96 10 12 80">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website"><meta property="og:title" content="Impression Mémoire Marseille | Tarifs Étudiants Polyscribe">
-  <meta property="og:description" content="Impression et reliure de mémoires, thèses et rapports à Marseille 13006. Tarifs étudiants sur carte. Reliure spirale, plastique ou métallique. Même jour. Ouvert samedi. Métro Castellane. ☎ 04 96 10 12 80"><meta property="og:url" content="https://www.polyscribe.fr/etudiants.html">
+  <meta property="og:description" content="Impression et reliure de mémoires & thèses à Marseille 13006 — tarifs étudiants La Timone, Luminy, AMU. Reliure spirale. Même jour. Ouvert samedi. Métro Castellane. ☎ 04 96 10 12 80"><meta property="og:url" content="https://www.polyscribe.fr/etudiants.html">
   <meta property="og:image" content="https://www.polyscribe.fr/img/Logo.webp">
   <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#003366">
-  <title>Impression Mémoire Thèse Marseille | Tarifs Étudiants — Polyscribe 13006</title>
+  <title>Impression Mémoire Marseille — La Timone, Luminy, AMU | Tarifs Étudiants Polyscribe</title>
   <link rel="icon" href="img/FaviconLogo.webp" type="image/png">
   <link rel="canonical" href="https://www.polyscribe.fr/etudiants.html">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -140,9 +140,43 @@
     .urgence-items{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:2.5rem;}
     .urgence-item{display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.9);font-size:0.88rem;}
     .urgence-item i{color:var(--gold);}
+    /* STATUS BAR */
+    #status-bar{background:var(--navy-dark);padding:0.5rem 2rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;font-size:0.8rem;}
+    #status-badge{display:inline-flex;align-items:center;gap:0.5rem;font-weight:700;padding:0.25rem 0.9rem;border-radius:20px;text-decoration:none;transition:opacity .2s;}
+    #status-badge.open{background:rgba(34,197,94,.18);color:#4ade80;border:1px solid rgba(74,222,128,.4);}
+    #status-badge.closed{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(248,113,113,.35);}
+    .sb-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:2px;}
+    #status-badge.open .sb-dot{background:#4ade80;box-shadow:0 0 6px #4ade80;}
+    #status-badge.closed .sb-dot{background:#f87171;}
+    .sb-google{display:inline-flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,.55);font-size:0.78rem;text-decoration:none;transition:color .2s;}
+    .sb-google:hover{color:var(--gold);}
+    /* FLOATING SEND BUTTON */
+    #float-send{position:fixed;bottom:2rem;right:2rem;z-index:900;display:flex;align-items:center;gap:0.55rem;background:var(--gold);color:var(--navy-dark);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 1.4rem;border-radius:30px;text-decoration:none;box-shadow:0 6px 25px rgba(200,169,110,.5);transition:all .3s;white-space:nowrap;}
+    #float-send:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 10px 35px rgba(200,169,110,.55);}
+    #float-send i{font-size:1rem;}
+    @media(max-width:480px){#float-send span{display:none;}#float-send{padding:.75rem 1rem;border-radius:50%;}}
+    /* CAMPUS CARDS */
+    .campus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
+    @media(max-width:768px){.campus-grid{grid-template-columns:1fr;}}
+    .campus-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.6rem 1.4rem;transition:all .3s;}
+    .campus-card:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,51,102,.1);}
+    .campus-card .cc-badge{display:inline-block;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .7rem;border-radius:10px;margin-bottom:.8rem;}
+    .campus-card .cc-badge.timone{background:rgba(220,53,69,.12);color:#dc3545;}
+    .campus-card .cc-badge.luminy{background:rgba(13,110,253,.12);color:#0d6efd;}
+    .campus-card .cc-badge.amu{background:rgba(200,169,110,.18);color:var(--gold);}
+    .campus-card h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+    .campus-card p{font-size:0.83rem;color:var(--text-muted);line-height:1.6;}
+    .campus-card .cc-distance{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--gold);font-weight:600;margin-top:.7rem;}
+    /* BDE BAND */
+    .bde-band{background:var(--navy-pale);border:1px solid var(--border);border-radius:12px;padding:2rem 2.5rem;margin-top:3rem;}
+    .bde-band h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:1rem;}
+    .bde-list{display:flex;flex-wrap:wrap;gap:.6rem;}
+    .bde-pill{display:inline-block;background:var(--white);border:1px solid var(--border);color:var(--text-muted);font-size:.78rem;padding:.25rem .75rem;border-radius:15px;transition:all .2s;}
+    .bde-pill:hover{border-color:var(--navy);color:var(--navy);}
+
 </style>
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Impression mémoire et thèse Marseille — tarifs étudiants","provider":{"@type":"LocalBusiness","name":"Polyscribe","telephone":"+33496101280","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"}},"serviceType":"Document printing and binding","areaServed":"Marseille","description":"Impression et reliure de mémoires, thèses et rapports à Marseille 13006. Tarifs étudiants spéciaux sur carte étudiante."}
+{"@context":"https://schema.org","@type":"Service","name":"Impression mémoire et thèse Marseille — tarifs étudiants","provider":{"@type":"LocalBusiness","name":"Polyscribe","telephone":"+33496101280","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"}},"serviceType":"Document printing and binding","areaServed":["Marseille","La Timone","Luminy","Marseille 13009","Marseille 13005","Marseille 13006"],"description":"Impression et reliure de mémoires, thèses et rapports à Marseille 13006. Tarifs étudiants spéciaux sur carte étudiante."}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -154,6 +188,19 @@
 </script>
 </head>
 <body>
+  <!-- STATUS BAR -->
+  <div id="status-bar">
+    <a id="status-badge" href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener">
+      <span class="sb-dot"></span><span id="sb-text">Chargement…</span>
+    </a>
+    <a href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener" class="sb-google">
+      <i class="fab fa-google"></i>&nbsp;Laissez-nous un avis Google
+    </a>
+  </div>
+  <!-- FLOATING BUTTON -->
+  <a href="mailto:contact@polyscribe.fr" id="float-send" title="Envoyer mon fichier à imprimer">
+    <i class="fas fa-paper-plane"></i><span>Envoyer mon fichier</span>
+  </a>
   <nav id="navbar">
     <a href="index.html" class="nav-brand">Polyscribe</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -198,7 +245,7 @@
           <h2 class="section-title">Votre mémoire imprimé et relié dans la journée</h2>
           <div class="divider left"></div>
           <p>Polyscribe accompagne depuis 30 ans les étudiants des universités et grandes écoles marseillaises. <strong>Tarifs étudiants</strong> sur présentation de votre carte étudiante ou certificat de scolarité.</p>
-          <p>Nous travaillons avec les étudiants <strong>des BDE d'Aix-Marseille Université, Sciences Po Aix, École Centrale Méditerranée, ENSAM, IAE, ESAG</strong> et de tous les établissements du 13.</p>
+          <p>Nous accueillons particulièrement les étudiants de la <strong>Faculté de Médecine de La Timone</strong> (thèses de médecine, pharmacie, odontologie), du <strong>campus de Luminy</strong> (masters sciences, STAPS, Polytech) et de tous les campus AMU. Partenaire de nombreux <strong>BDE</strong> — renseignez-vous pour les tarifs négociés.</p>
           <p>Déposez votre fichier le matin — récupérez votre mémoire relié dans l'après-midi. <strong>Ouvert le samedi de 9h à 11h30</strong> pour les urgences de soutenance.</p>
         </div>
         <div class="lp-intro-visual">
@@ -206,6 +253,56 @@
           <div class="lp-stat reveal reveal-delay-2"><div class="lp-stat-num">Sam.</div><div class="lp-stat-label">9h–11h30</div></div>
           <div class="lp-stat reveal reveal-delay-3"><div class="lp-stat-num">3</div><div class="lp-stat-label">Types reliure</div></div>
           <div class="lp-stat reveal reveal-delay-4"><div class="lp-stat-num">PDF</div><div class="lp-stat-label">Par email</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS SECTION -->
+  <section style="background:var(--off-white);padding:4rem 2rem;">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:0.5rem;">
+        <span class="section-label">Nos campus partenaires</span>
+        <h2 class="section-title">On connaît vos facultés par cœur</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="campus-grid">
+        <div class="campus-card reveal reveal-delay-1">
+          <span class="cc-badge timone">🏥 La Timone</span>
+          <h4>Faculté de Médecine & Pharmacie</h4>
+          <p>Thèses de médecine, mémoires de pharmacie, odontologie, maïeutique — impression haute qualité, reliure le jour même.</p>
+          <div class="cc-distance"><i class="fas fa-subway"></i> 20 min via Castellane → La Timone</div>
+        </div>
+        <div class="campus-card reveal reveal-delay-2">
+          <span class="cc-badge luminy">🔬 Luminy</span>
+          <h4>Campus de Luminy</h4>
+          <p>Masters sciences, STAPS, Polytech Marseille — rapports de stage, mémoires de master, rendus de projets.</p>
+          <div class="cc-distance"><i class="fas fa-subway"></i> Castellane → Sainte-Marguerite</div>
+        </div>
+        <div class="campus-card reveal reveal-delay-3">
+          <span class="cc-badge amu">🎓 Tous campus AMU</span>
+          <h4>Saint-Charles, Droit, IUT, ESAG…</h4>
+          <p>Nous accueillons les étudiants de tous les établissements du 13 — carte étudiante ou certificat de scolarité accepté.</p>
+          <div class="cc-distance"><i class="fas fa-subway"></i> Métro Castellane M1/M2/T3</div>
+        </div>
+      </div>
+      <div class="bde-band reveal">
+        <h3><i class="fas fa-users" style="color:var(--gold);margin-right:.5rem;"></i>BDE partenaires — tarifs négociés pour vos membres</h3>
+        <p style="color:var(--text-muted);font-size:.88rem;margin-bottom:1rem;">Votre BDE souhaite un partenariat avec Polyscribe ? Contactez-nous pour un tarif préférentiel pour tous vos adhérents.</p>
+        <div class="bde-list">
+          <span class="bde-pill">BDE Médecine Timone</span>
+          <span class="bde-pill">BDE Luminy Sciences</span>
+          <span class="bde-pill">BDE Polytech Marseille</span>
+          <span class="bde-pill">BDE Droit AMU</span>
+          <span class="bde-pill">BDE STAPS</span>
+          <span class="bde-pill">BDE IAE Aix</span>
+          <span class="bde-pill">BDE Sciences Po Aix</span>
+          <span class="bde-pill">BDE ENSAM</span>
+          <span class="bde-pill">BDE École Centrale Méditerranée</span>
+          <span class="bde-pill">Et tous les autres…</span>
+        </div>
+        <div style="margin-top:1.2rem;">
+          <a href="mailto:contact@polyscribe.fr?subject=Partenariat BDE" class="btn btn-navy" style="font-size:.8rem;padding:.7rem 1.5rem;"><i class="fas fa-handshake"></i> Proposer un partenariat BDE</a>
         </div>
       </div>
     </div>
@@ -414,6 +511,7 @@
         <div class="lp-faq-item"><div class="lp-faq-q">Dans quel format dois-je envoyer mon fichier ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Le format PDF est recommandé. Vérifiez que vos marges sont d'au moins 2,5 cm du côté de la reliure. Envoyez à contact@polyscribe.fr avec le nombre d'exemplaires et le type de reliure souhaité.</p></div></div>
         <div class="lp-faq-item"><div class="lp-faq-q">Proposez-vous la couverture personnalisée ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui, nous réalisons des couvertures couleur avec votre titre, nom, université et logo de l'établissement sur la page de garde et sur le dos du document.</p></div></div>
         <div class="lp-faq-item"><div class="lp-faq-q">Imprimez-vous les plans A0 pour les étudiants en architecture ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui, nous imprimons les rendus de projet pour les étudiants en architecture, BTP et génie civil aux formats A0, A1 et A2, en couleur ou en N&B, avec tarifs étudiants.</p></div></div>
+                <div class="lp-faq-item"><div class="lp-faq-q">Êtes-vous proches de La Timone et de Luminy ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui. Depuis La Timone, prenez le métro M2 jusqu'à Castellane (3 arrêts) — Polyscribe est à 2 minutes à pied. Depuis Luminy, rejoignez Castellane via le réseau RTM. Idéal pour vos thèses de médecine, mémoires scientifiques et rapports de stage.</p></div></div>
         <div class="lp-faq-item"><div class="lp-faq-q">Avec quelles universités marseillaises travaillez-vous ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Nous accompagnons les étudiants d'Aix-Marseille Université et les BDE (AMU — toutes facultés), Sciences Po Aix, École Centrale Méditerranée, ENSAM, IAE Aix, ESAG, IUT, BTS et toutes les grandes écoles du département 13.</p></div></div>
       </div>
     </div>
@@ -431,8 +529,8 @@
       <p>La reliure spirale métallique est la référence pour les mémoires de master (M1, M2) : pratique, elle s'ouvre à plat. La reliure plastique est l'option la plus économique pour les rapports de stage.</p>
       <h3>Comment préparer son fichier pour l'impression</h3>
       <p>Exportez votre mémoire en PDF. Vérifiez les marges (minimum 2,5 cm côté reliure). Intégrez vos polices dans le PDF. Les images doivent être en 150 dpi minimum (300 dpi pour la couleur). Envoyez à contact@polyscribe.fr avec vos instructions.</p>
-      <h3>Proximité des campus marseillais</h3>
-      <p>Polyscribe est situé au 90 rue Edmond Rostand, desservi par le métro Castellane (lignes M1 et M2) et le tramway T3. À environ 20 minutes de la Timone, 15 minutes de Saint-Charles, 10 minutes de la Faculté de droit et des Sciences.</p>
+      <h3>Proximité des campus marseillais — La Timone, Luminy, Saint-Charles</h3>
+      <p>Polyscribe est situé au 90 rue Edmond Rostand, desservi par le métro Castellane (lignes M1 et M2) et le tramway T3. Depuis la <strong>Faculté de Médecine de La Timone</strong>, c'est 3 arrêts de métro M2. Depuis le <strong>campus de Luminy</strong>, rejoignez Castellane via le réseau RTM. Les étudiants de <strong>Saint-Charles</strong>, du campus Schuman et de l'IUT viennent régulièrement chez nous — à environ 15 min.</p>
       <p style="margin-top:2rem;"><a href="index.html" style="color:var(--navy);">← Retour à l'accueil</a> &nbsp;|&nbsp; <a href="plans-architecte-marseille.html" style="color:var(--navy);">Plans architecte A0 A1 A2</a></p>
     </div>
   </section>
@@ -467,6 +565,29 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   <script>
+
+    // ── STATUT OUVERT / FERMÉ ────────────────────────────────────────────────
+    (function(){
+      const H={
+        1:[[510,750],[780,1050]],
+        2:[[510,750],[780,1110]],
+        3:[[510,750],[780,1050]],
+        4:[[510,750],[780,1110]],
+        5:[[510,750],[780,1110]],
+        6:[[540,690]]
+      };
+      const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+      function mins(d){return d.getHours()*60+d.getMinutes();}
+      function open(){const n=new Date();const s=H[n.getDay()];if(!s)return false;return s.some(([a,b])=>mins(n)>=a&&mins(n)<b);}
+      function next(){const n=new Date();for(let i=1;i<=7;i++){const d=(n.getDay()+i)%7;const s=H[d];if(s&&s.length){const h=Math.floor(s[0][0]/60),m=s[0][0]%60;return 'Ouvre '+DAYS[d]+' à '+h+'h'+(m?String(m).padStart(2,'0'):'');}}return 'Fermé';}
+      const badge=document.getElementById('status-badge');
+      const text=document.getElementById('sb-text');
+      if(open()){badge.classList.add('open');text.textContent='Ouvert maintenant';}
+      else{badge.classList.add('closed');text.textContent='Fermé · '+next();}
+      const bar=document.getElementById('status-bar');
+      if(bar){document.getElementById('navbar').style.top=bar.offsetHeight+'px';}
+    })();
+
     const nb=document.getElementById('navbar');
     window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>60));
     const nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');

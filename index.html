@@ -129,7 +129,9 @@
     .trust-item{display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.8);font-size:0.82rem;}
     .trust-item i{color:var(--gold);}
     /* SERVICES GRID */
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+    @media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
     .service-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.35s;text-decoration:none;display:block;color:inherit;position:relative;overflow:hidden;}
     .service-card::before{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--gold);transition:width 0.35s;}
     .service-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,51,102,0.1);border-color:rgba(0,51,102,0.2);}.service-card:hover::before{width:100%;}
@@ -171,7 +173,9 @@
     .stat-number{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.5rem;}.stat-label{font-size:0.82rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.08em;}
     @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:3rem;}}
     /* CLIENTS */
-    .client-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;}
+    .client-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+    @media(max-width:768px){.client-cards{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.client-cards{grid-template-columns:1fr;}}
     .client-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.8rem 1.2rem;text-align:center;text-decoration:none;display:block;transition:all 0.35s;}
     .client-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,51,102,0.1);border-color:rgba(0,51,102,0.2);}
     .client-card .cc-icon{width:52px;height:52px;background:var(--navy-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}.client-card .cc-icon i{font-size:1.3rem;color:var(--navy);}
@@ -214,9 +218,26 @@
     #seo p{margin-bottom:1.2rem;color:var(--text-muted);line-height:1.85;font-size:0.98rem;}
     #seo h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-top:2.5rem;margin-bottom:0.75rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);}
     #seo a{color:var(--navy);}
-</style>
+
+    /* STATUS BAR */
+    #status-bar{background:var(--navy-dark);padding:0.5rem 2rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;font-size:0.8rem;}
+    #status-badge{display:inline-flex;align-items:center;gap:0.5rem;font-weight:700;padding:0.25rem 0.9rem;border-radius:20px;text-decoration:none;transition:opacity .2s;}
+    #status-badge.open{background:rgba(34,197,94,.18);color:#4ade80;border:1px solid rgba(74,222,128,.4);}
+    #status-badge.closed{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(248,113,113,.35);}
+    .sb-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:2px;}
+    #status-badge.open .sb-dot{background:#4ade80;box-shadow:0 0 6px #4ade80;}
+    #status-badge.closed .sb-dot{background:#f87171;}
+    .sb-google{display:inline-flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,.55);font-size:0.78rem;text-decoration:none;transition:color .2s;}
+    .sb-google:hover{color:var(--gold);}
+    /* FLOATING SEND BUTTON */
+    #float-send{position:fixed;bottom:2rem;right:2rem;z-index:900;display:flex;align-items:center;gap:0.55rem;background:var(--gold);color:var(--navy-dark);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 1.4rem;border-radius:30px;text-decoration:none;box-shadow:0 6px 25px rgba(200,169,110,.5);transition:all .3s;white-space:nowrap;}
+    #float-send:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 10px 35px rgba(200,169,110,.55);}
+    #float-send i{font-size:1rem;}
+    @media(max-width:480px){#float-send span{display:none;}#float-send{padding:.75rem 1rem;border-radius:50%;}}
+
+  </style>
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":["LocalBusiness","PrintShop"],"@id":"https://www.polyscribe.fr/#business","name":"Polyscribe","description":"Centre de reprographie à Marseille 13006 depuis 30 ans. Impression numérique A4 à A0, plans architecte, reliure mémoire/thèse, affiches, flyers, numérisation, secrétariat, location salle. Tarifs étudiants.","url":"https://www.polyscribe.fr","telephone":"+33496101280","email":"contact@polyscribe.fr","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":43.2855,"longitude":5.3845},"priceRange":"€€","areaServed":["Marseille","Aix-en-Provence","Bouches-du-Rhône"],"image":"https://www.polyscribe.fr/img/Logo.webp","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday"],"opens":"13:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday","Friday"],"opens":"13:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:30"}]}
+{"@context":"https://schema.org","@type":["LocalBusiness","PrintShop"],"@id":"https://www.polyscribe.fr/#business","name":"Polyscribe","description":"Centre de reprographie à Marseille 13006 depuis 30 ans. Impression numérique A4 à A0, plans architecte, reliure mémoire/thèse, affiches, flyers, numérisation, secrétariat, location salle. Tarifs étudiants.","url":"https://www.polyscribe.fr","telephone":"+33496101280","email":"contact@polyscribe.fr","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":43.2855,"longitude":5.3845},"priceRange":"€€","areaServed":["Marseille","Aix-en-Provence","Bouches-du-Rhône","La Timone","Luminy","Marseille 13006","Marseille 13005","Marseille 13009"],"image":"https://www.polyscribe.fr/img/Logo.webp","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday"],"opens":"13:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday","Friday"],"opens":"13:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:30"}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -228,7 +249,20 @@
 ]}
 </script>
 </head>
-<body>  <nav id="navbar">
+<body>  <!-- STATUS BAR -->
+  <div id="status-bar">
+    <a id="status-badge" href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener">
+      <span class="sb-dot"></span><span id="sb-text">Chargement…</span>
+    </a>
+    <a href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener" class="sb-google">
+      <i class="fab fa-google"></i>&nbsp;Laissez-nous un avis Google
+    </a>
+  </div>
+  <!-- FLOATING BUTTON -->
+  <a href="mailto:contact@polyscribe.fr" id="float-send" title="Envoyer mon fichier à imprimer">
+    <i class="fas fa-paper-plane"></i><span>Envoyer mon fichier</span>
+  </a>
+  <nav id="navbar">
     <a href="#hero" class="nav-brand">Polyscribe</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
@@ -317,7 +351,7 @@
       <div class="promo-text reveal">
         <span class="section-label">Spécial étudiants</span>
         <h2>Impressions et reliures à tarifs étudiants à Marseille</h2>
-        <p>Votre soutenance approche ? Polyscribe imprime et relie votre mémoire ou thèse dans la journée, avec des <strong style="color:var(--gold)">tarifs préférentiels sur présentation de votre carte étudiante.</strong></p>
+        <p>Votre soutenance approche ? Polyscribe imprime et relie votre mémoire ou thèse dans la journée, avec des <strong style="color:var(--gold)">tarifs préférentiels sur présentation de votre carte étudiante.</strong> Nous accueillons les étudiants de <strong style="color:var(--gold-light)">La Timone, Luminy, Saint-Charles et tous les campus AMU</strong>.</p>
         <div class="promo-features">
           <div class="promo-feature"><i class="fas fa-check-circle"></i><span>Impression N&B et couleur</span></div>
           <div class="promo-feature"><i class="fas fa-check-circle"></i><span>Reliure spirale, métallique, plastique</span></div>
@@ -437,7 +471,7 @@
         </a>
         <a href="etudiants.html" class="client-card reveal reveal-delay-2" style="border-color:rgba(200,169,110,0.35);">
           <div class="cc-icon" style="background:rgba(200,169,110,0.15);"><i class="fas fa-graduation-cap" style="color:var(--gold);"></i></div>
-          <h3>Étudiants</h3><p>Mémoires, thèses, rapports — <strong style="color:var(--gold);">tarifs étudiants</strong></p>
+          <h3>Étudiants</h3><p>Timone, Luminy, AMU — mémoires, thèses, rapports — <strong style="color:var(--gold);">tarifs étudiants</strong></p>
           <span class="cc-link" style="color:var(--gold);">Voir les tarifs →</span>
         </a>
         <a href="externalisation-impression-marseille.html" class="client-card reveal reveal-delay-3">
@@ -502,6 +536,7 @@
         <div class="divider"></div>
       </div>
       <div class="faq-list">
+                <div class="faq-item"><div class="faq-q">Êtes-vous proches de La Timone et de Luminy ?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Oui. Situé au 90 rue Edmond Rostand (13006), Polyscribe est accessible depuis la Faculté de Médecine de La Timone et le campus de Luminy via le métro Castellane (M1/M2) ou le tramway T3. Idéal pour les thèses de médecine, mémoires de master et rapports de stage — tarifs étudiants sur carte.</p></div></div>
         <div class="faq-item"><div class="faq-q">Polyscribe propose-t-il des tarifs étudiants ?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Oui. Tarifs préférentiels sur présentation de la carte étudiante pour l'impression de mémoires, thèses et reliures. <a href="etudiants.html">Voir la page étudiants →</a></p></div></div>
         <div class="faq-item"><div class="faq-q">Peut-on externaliser ses impressions et photocopies chez Polyscribe ?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Oui. Polyscribe prend en charge l'externalisation de vos impressions, copies, reliures et travaux de secrétariat pour PME, cabinets et indépendants. <a href="externalisation-impression-marseille.html">En savoir plus →</a></p></div></div>
         <div class="faq-item"><div class="faq-q">Imprimez-vous des plans architecte A0 à Marseille ?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Oui. Plans A0, A1, A2 en N&B ou couleur, service express disponible. <a href="plans-architecte-marseille.html">En savoir plus →</a></p></div></div>
@@ -510,6 +545,14 @@
         <div class="faq-item"><div class="faq-q">Comment envoyer un fichier à imprimer ?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Par email à contact@polyscribe.fr (PDF recommandé), par clé USB en boutique, ou par tout autre moyen de transfert. Précisez le format, la quantité et le type de finition souhaités.</p></div></div>
       </div>
     </div>
+        <div style="text-align:center;margin-top:2rem;">
+        <a href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,.5);font-size:0.85rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.6rem 1.5rem;border-radius:20px;transition:all .3s;"
+           onmouseover="this.style.color='#c8a96e';this.style.borderColor='rgba(200,169,110,.4)'"
+           onmouseout="this.style.color='rgba(255,255,255,.5)';this.style.borderColor='rgba(255,255,255,.15)'">
+          <i class="fab fa-google"></i>&nbsp;Vous avez aimé notre service ? Laissez-nous un avis Google
+        </a>
+      </div>
   </section>
 
   <!-- SEO + GEO -->
@@ -520,6 +563,8 @@
       <div class="divider left"></div>
       <h3>Impression de mémoires et thèses — tarifs étudiants Marseille</h3>
       <p>Polyscribe est la référence pour les étudiants de Marseille qui cherchent à <a href="etudiants.html">imprimer et relier leur mémoire</a> avec des tarifs adaptés. Mémoires de master, thèses de doctorat, rapports de stage — nous imprimons dans la journée et sommes ouverts le samedi matin pour les urgences de soutenance.</p>
+            <h3>Étudiants de La Timone et de Luminy — proche de vous</h3>
+      <p>Polyscribe accueille régulièrement les étudiants de la <strong>Faculté de Médecine de La Timone</strong> (Aix-Marseille Université) et du <strong>campus de Luminy</strong> (Sciences, STAPS, Polytech). Situé au cœur du 13006, accessible en métro Castellane (M1/M2) ou en tramway T3, nous sommes la solution idéale pour imprimer et relier vos thèses de médecine, mémoires de master scientifique et rapports de stage, avec des <strong>tarifs étudiants</strong> sur présentation de la carte étudiante.</p>
       <h3>Externalisation impression et secrétariat à Marseille</h3>
       <p>Pour les PME, TPE, cabinets et auto-entrepreneurs qui souhaitent <a href="externalisation-impression-marseille.html">externaliser leurs impressions, photocopies et travaux de secrétariat</a>, Polyscribe propose une solution clé en main. Fini la gestion des consommables, les pannes de photocopieur et le temps perdu sur les petites tâches admin.</p>
       <h3>Tirage de plans architecte A0 à Marseille</h3>
@@ -534,7 +579,7 @@
           <div class="geo-item"><span class="geo-label">Adresse</span><span class="geo-value">90 rue Edmond Rostand, 13006 Marseille</span></div>
           <div class="geo-item"><span class="geo-label">Accès</span><span class="geo-value">Métro Castellane M1/M2 · Tramway T3</span></div>
           <div class="geo-item"><span class="geo-label">Services</span><span class="geo-value">Plans A0/A1/A2 · Mémoires · Copies · Affiches · Flyers · Secrétariat · Location salle</span></div>
-          <div class="geo-item"><span class="geo-label">Clients</span><span class="geo-value">Architectes · Étudiants (tarifs spéciaux) · Entreprises · Avocats · Associations</span></div>
+          <div class="geo-item"><span class="geo-label">Clients</span><span class="geo-value">Architectes · Étudiants Timone &amp; Luminy (tarifs spéciaux) · Entreprises · Avocats · Associations</span></div>
           <div class="geo-item"><span class="geo-label">Horaires</span><span class="geo-value">L/Me 8h30-17h30 · Ma/Je/Ve 8h30-18h30 · Sam 9h-11h30</span></div>
           <div class="geo-item"><span class="geo-label">Téléphone</span><span class="geo-value">04 96 10 12 80</span></div>
           <div class="geo-item"><span class="geo-label">Email</span><span class="geo-value">contact@polyscribe.fr</span></div>
@@ -583,6 +628,31 @@
   </div>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   <script>
+
+    // ── STATUT OUVERT / FERMÉ (horaires exacts Google) ──────────────────────
+    (function(){
+      // slots : minutes depuis minuit [ouvre, ferme] par jour (0=dim … 6=sam)
+      const H={
+        1:[[510,750],[780,1050]],  // lun 8h30-12h30 / 13h-17h30
+        2:[[510,750],[780,1110]],  // mar 8h30-12h30 / 13h-18h30
+        3:[[510,750],[780,1050]],  // mer 8h30-12h30 / 13h-17h30
+        4:[[510,750],[780,1110]],  // jeu 8h30-12h30 / 13h-18h30
+        5:[[510,750],[780,1110]],  // ven 8h30-12h30 / 13h-18h30
+        6:[[540,690]]              // sam 9h-11h30
+      };
+      const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+      function mins(d){return d.getHours()*60+d.getMinutes();}
+      function open(){const n=new Date();const s=H[n.getDay()];if(!s)return false;return s.some(([a,b])=>mins(n)>=a&&mins(n)<b);}
+      function next(){const n=new Date();for(let i=1;i<=7;i++){const d=(n.getDay()+i)%7;const s=H[d];if(s&&s.length){const h=Math.floor(s[0][0]/60),m=s[0][0]%60;return 'Ouvre '+DAYS[d]+' à '+h+'h'+(m?String(m).padStart(2,'0'):'');}}return 'Fermé';}
+      const badge=document.getElementById('status-badge');
+      const text=document.getElementById('sb-text');
+      if(open()){badge.classList.add('open');text.textContent='Ouvert maintenant';}
+      else{badge.classList.add('closed');text.textContent='Fermé · '+next();}
+      // Décaler navbar pour compenser la barre status
+      const bar=document.getElementById('status-bar');
+      if(bar){document.getElementById('navbar').style.top=bar.offsetHeight+'px';}
+    })();
+
     const navbar=document.getElementById('navbar');
     window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
     const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
