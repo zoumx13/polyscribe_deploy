@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Page d'accueil — priorité maximale -->
+  <url>
+    <loc>https://www.polyscribe.fr/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.polyscribe.fr/img/gallery/photo5.webp</image:loc>
+      <image:caption>Devanture boutique Polyscribe reprographie Marseille 13006</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.polyscribe.fr/img/gallery/photo4.webp</image:loc>
+      <image:caption>Intérieur boutique Polyscribe impression numérique Marseille</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.polyscribe.fr/img/gallery/photo3.webp</image:loc>
+      <image:caption>Reliure spirale métallique mémoire thèse Marseille</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.polyscribe.fr/img/gallery/photo1.webp</image:loc>
+      <image:caption>Formats d'impression A4 A3 A2 A1 A0 reprographie Marseille</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.polyscribe.fr/img/gallery/photo6.webp</image:loc>
+      <image:caption>Plastification documents Polyscribe Marseille</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.polyscribe.fr/img/gallery/photo2.webp</image:loc>
+      <image:caption>Salle de réunion en location Polyscribe Marseille Castellane</image:caption>
+    </image:image>
+  </url>
+
+  <!-- LP Étudiants — fort volume de recherche -->
+  <url>
+    <loc>https://www.polyscribe.fr/etudiants.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- LP Impression mémoire — très ciblée longue traîne -->
+  <url>
+    <loc>https://www.polyscribe.fr/impression-memoire-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- LP Plans architecte — audience pro à fort panier -->
+  <url>
+    <loc>https://www.polyscribe.fr/plans-architecte-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- LP Externalisation -->
+  <url>
+    <loc>https://www.polyscribe.fr/externalisation-impression-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- LP Reprographie générique -->
+  <url>
+    <loc>https://www.polyscribe.fr/reprographie-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LP Affiche grand format -->
+  <url>
+    <loc>https://www.polyscribe.fr/impression-affiche-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- LP Flyers -->
+  <url>
+    <loc>https://www.polyscribe.fr/impression-flyer-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- LP Location salle -->
+  <url>
+    <loc>https://www.polyscribe.fr/location-salle-marseille.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pages profils clients -->
+  <url>
+    <loc>https://www.polyscribe.fr/architectes.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.polyscribe.fr/avocats.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.polyscribe.fr/associations.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.polyscribe.fr/autoentrepreneurs.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+</urlset>
