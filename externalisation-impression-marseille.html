@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Externalisez vos impressions, photocopies, reliures et secrétariat à Marseille 13006. Polyscribe prend en charge vos besoins documentaires pour PME, TPE, cabinets et indépendants. ☎ 04 96 10 12 80">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website"><meta property="og:title" content="Externalisation Impression & Secrétariat Marseille | Polyscribe">
+  <meta property="og:description" content="Externalisez vos impressions, photocopies, reliures et secrétariat à Marseille 13006. Polyscribe prend en charge vos besoins documentaires pour PME, TPE, cabinets et indépendants. ☎ 04 96 10 12 80"><meta property="og:url" content="https://www.polyscribe.fr/externalisation-impression-marseille.html">
+  <meta property="og:image" content="https://www.polyscribe.fr/img/Logo.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#003366">
+  <title>Externalisation Impression Copies Secrétariat Marseille | Polyscribe 13006</title>
+  <link rel="icon" href="img/FaviconLogo.webp" type="image/png">
+  <link rel="canonical" href="https://www.polyscribe.fr/externalisation-impression-marseille.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+  <style>
+    :root{--navy:#003366;--navy-dark:#002244;--navy-light:#0a4a8c;--navy-pale:#e8eef5;--gold:#c8a96e;--gold-light:#e8c98e;--white:#fff;--off-white:#f8f7f4;--text:#1a2035;--text-muted:#6b7280;--border:rgba(0,51,102,0.1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+        /* ══ NAVBAR ══════════════════════════════════════════════════════════════ */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:all 0.4s ease;}
+    #navbar.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 30px rgba(0,51,102,0.1);padding:0.65rem 2rem;}
+    .nav-brand{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:rgba(255,255,255,0.95);text-decoration:none;letter-spacing:0.02em;transition:color 0.3s;white-space:nowrap;}
+    #navbar.scrolled .nav-brand{color:var(--navy);}
+    .nav-center{display:flex;align-items:center;flex:1;justify-content:center;}
+    .nav-links{display:flex;list-style:none;gap:2rem;align-items:center;}
+    .nav-links a{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.8);text-decoration:none;transition:color 0.3s;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width 0.3s;}
+    .nav-links a:hover::after{width:100%;}
+    .nav-links a:hover{color:#fff;}
+    #navbar.scrolled .nav-links a{color:var(--text-muted);}
+    #navbar.scrolled .nav-links a:hover{color:var(--navy);}
+    .nav-right{display:flex;align-items:center;gap:0.9rem;flex-shrink:0;}
+    #nav-status{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.7rem;font-weight:700;padding:0.22rem 0.75rem;border-radius:20px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+    #nav-status.open{background:rgba(34,197,94,.2);color:#4ade80;border:1px solid rgba(74,222,128,.45);}
+    #nav-status.closed{background:rgba(239,68,68,.18);color:#f87171;border:1px solid rgba(248,113,113,.4);}
+    #navbar.scrolled #nav-status.open{background:rgba(34,197,94,.12);color:#16a34a;}
+    #navbar.scrolled #nav-status.closed{background:rgba(239,68,68,.1);color:#dc2626;}
+    .sb-dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0;}
+    #nav-status.open .sb-dot{background:#4ade80;box-shadow:0 0 5px #4ade80;}
+    #nav-status.closed .sb-dot{background:#f87171;}
+    .nav-google{display:inline-flex;align-items:center;gap:0.35rem;color:rgba(255,255,255,.5);font-size:0.7rem;text-decoration:none;transition:color .2s;white-space:nowrap;}
+    .nav-google:hover{color:var(--gold);}
+    #navbar.scrolled .nav-google{color:var(--text-muted);}
+    #navbar.scrolled .nav-google:hover{color:var(--navy);}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+    .nav-toggle span{display:block;width:24px;height:2px;background:rgba(255,255,255,0.9);transition:all 0.3s;}
+    #navbar.scrolled .nav-toggle span{background:var(--navy);}
+    /* Croix quand menu ouvert */
+    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    @media(max-width:960px){.nav-google{display:none;}.nav-links{gap:1.3rem;}}
+    @media(max-width:768px){
+      /* Navbar 2 lignes : flex-wrap */
+      #navbar{flex-wrap:wrap;padding:0.75rem 1.2rem 0;}
+      #navbar.scrolled{padding:0.6rem 1.2rem 0;}
+      /* Ligne 1 : logo + burger */
+      .nav-brand{flex:1;}
+      .nav-center{display:none;}
+      .nav-toggle{display:flex;}
+      /* Ligne 2 : badge + avis — width:100% pour passer à la ligne */
+      .nav-right{width:100%;justify-content:center;
+        padding:0.4rem 0 0.55rem;gap:1rem;
+        border-top:1px solid rgba(255,255,255,0.12);}
+      #navbar.scrolled .nav-right{border-top-color:var(--border);}
+      #nav-status{font-size:0.72rem;padding:0.25rem 0.8rem;}
+      .nav-google{display:inline-flex;font-size:0.7rem;}
+      #navbar.scrolled .nav-google{color:var(--text-muted);}
+      /* Drawer menu */
+      .nav-links{position:fixed;top:0;right:-100%;width:75vw;max-width:300px;
+        height:100vh;background:var(--white);flex-direction:column;
+        justify-content:center;gap:2rem;padding:2rem;
+        transition:right 0.4s ease;box-shadow:-10px 0 40px rgba(0,0,0,0.1);}
+      .nav-links.open{right:0;}
+      .nav-links a{color:var(--navy)!important;font-size:1rem;}
+    }
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:3px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;transition:all 0.3s ease;cursor:pointer;border:none;}
+    .btn-primary{background:var(--gold);color:var(--navy-dark);}.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,169,110,0.4);}
+    .btn-outline{background:transparent;color:rgba(255,255,255,0.9);border:1.5px solid rgba(255,255,255,0.5);}.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.9);color:#fff;transform:translateY(-2px);}
+    .btn-navy{background:var(--navy);color:#fff;}.btn-navy:hover{background:var(--navy-light);transform:translateY(-2px);}
+    section{padding:7rem 2rem;}.container{max-width:1100px;margin:0 auto;}
+    .section-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:0.75rem;display:block;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:1.5rem;}
+    .section-title.light{color:var(--white);}
+    .divider{width:50px;height:3px;background:var(--gold);margin:0 auto 2.5rem;}.divider.left{margin:0 0 2.5rem;}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}.reveal.visible{opacity:1;transform:translateY(0);}
+    .reveal-delay-1{transition-delay:0.1s;}.reveal-delay-2{transition-delay:0.2s;}.reveal-delay-3{transition-delay:0.3s;}.reveal-delay-4{transition-delay:0.4s;}
+    .breadcrumb{background:var(--navy);padding:0.8rem 2rem;font-size:0.78rem;padding-top:5.2rem;}
+    .breadcrumb-inner{max-width:1100px;margin:0 auto;display:flex;gap:0.5rem;align-items:center;color:rgba(255,255,255,0.5);}
+    .breadcrumb-inner a{color:rgba(255,255,255,0.5);text-decoration:none;}.breadcrumb-inner a:hover{color:var(--gold);}.breadcrumb-inner span{color:rgba(255,255,255,0.3);}.breadcrumb-inner .current{color:var(--gold);}
+    footer{background:var(--navy-dark);color:rgba(255,255,255,0.5);text-align:center;padding:2rem;font-size:0.82rem;}
+    footer a{color:rgba(255,255,255,0.5);text-decoration:none;}.footer a:hover{color:var(--gold);}
+    .modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,22,44,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem;}.modal-overlay.open{display:flex;}
+    .modal-box{background:var(--white);border-radius:8px;padding:2.5rem;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-box h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1.5rem;font-size:1.5rem;}.modal-box p{font-size:0.88rem;line-height:1.7;margin-bottom:0.7rem;color:var(--text-muted);}.modal-box p strong{color:var(--text);}
+    .modal-close{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);width:32px;height:32px;display:flex;align-items:center;justify-content:center;}.modal-close:hover{color:var(--navy);}
+    .lp-hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--navy-dark);}
+    .lp-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.22;}
+    .lp-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,34,68,0.92) 0%,rgba(0,51,102,0.65) 100%);}
+    .lp-hero-content{position:relative;z-index:2;text-align:center;padding:6rem 2rem 3rem;max-width:900px;}
+    .lp-hero-icon{width:80px;height:80px;border:2px solid rgba(200,169,110,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;}
+    .lp-hero-icon i{font-size:2rem;color:var(--gold);}
+    .lp-hero-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.25em;color:var(--gold);margin-bottom:1rem;display:block;}
+    .lp-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:1.2rem;}
+    .lp-hero-sub{font-size:clamp(1rem,2.5vw,1.15rem);color:rgba(255,255,255,0.82);line-height:1.7;margin-bottom:1.5rem;max-width:680px;margin-left:auto;margin-right:auto;}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,169,110,0.2);border:1px solid rgba(200,169,110,0.5);color:var(--gold);font-size:0.82rem;font-weight:600;padding:0.5rem 1.2rem;border-radius:20px;margin-bottom:1.5rem;}
+    .lp-hero-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+    .scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;animation:bounce 2s infinite;opacity:0.6;}
+    .scroll-indicator span{display:block;width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.8));margin:0 auto;}
+    .lp-intro{background:var(--white);}.lp-intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;}
+    .lp-intro-text p{color:var(--text-muted);line-height:1.85;margin-bottom:1.2rem;font-size:1rem;}.lp-intro-text p strong{color:var(--text);}
+    .lp-intro-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .lp-stat{background:var(--off-white);border:1px solid var(--border);border-radius:6px;padding:1.8rem 1.2rem;text-align:center;transition:all 0.3s;}.lp-stat:hover{border-color:var(--navy);transform:translateY(-3px);}
+    .lp-stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:0.4rem;}.lp-stat-label{font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
+    @media(max-width:768px){.lp-intro-grid{grid-template-columns:1fr;gap:2.5rem;}}
+    .lp-services{background:var(--off-white);}.services-header{text-align:center;margin-bottom:1rem;}
+    .lp-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3.5rem;}
+    .lp-service-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:all 0.35s;}
+    .lp-service-card::after{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.35s;}.lp-service-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,51,102,0.1);border-color:rgba(0,51,102,0.2);}.lp-service-card:hover::after{height:100%;}
+    .lp-service-card-icon{width:52px;height:52px;background:var(--navy-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;transition:all 0.3s;}.lp-service-card:hover .lp-service-card-icon{background:var(--navy);}
+    .lp-service-card-icon i{font-size:1.4rem;color:var(--navy);transition:color 0.3s;}.lp-service-card:hover .lp-service-card-icon i{color:var(--gold);}
+    .lp-service-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.6rem;}.lp-service-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.65;}
+    .lp-why{background:var(--navy);}.lp-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;}
+    .lp-why-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;}.lp-why-card:hover{background:rgba(255,255,255,0.09);border-color:rgba(200,169,110,0.35);transform:translateY(-3px);}
+    .lp-why-card i{font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;}.lp-why-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:0.6rem;}.lp-why-card p{font-size:0.86rem;color:rgba(255,255,255,0.65);line-height:1.65;}
+    @media(max-width:768px){.lp-why-grid{grid-template-columns:1fr;}}
+    .lp-faq{background:var(--white);}.lp-faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:1rem;max-width:780px;}
+    .lp-faq-item{border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+    .lp-faq-q{padding:1.2rem 1.5rem;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--white);transition:background 0.2s;}.lp-faq-q:hover{background:var(--navy-pale);}
+    .lp-faq-q i{font-size:0.75rem;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+    .lp-faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s ease;}.lp-faq-item.open .lp-faq-a{max-height:300px;padding:0 1.5rem 1.2rem;}.lp-faq-item.open .lp-faq-q i{transform:rotate(180deg);}.lp-faq-a p{font-size:0.92rem;color:var(--text-muted);line-height:1.7;}
+    .lp-seo{background:var(--off-white);}.lp-seo p{margin-bottom:1.2rem;color:var(--text-muted);line-height:1.85;font-size:0.98rem;max-width:820px;}.lp-seo h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-top:2.5rem;margin-bottom:0.75rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);}
+    .lp-cta-band{background:var(--navy-dark);text-align:center;padding:5rem 2rem;}.lp-cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;margin-bottom:1rem;}.lp-cta-band p{color:rgba(255,255,255,0.7);margin-bottom:2.5rem;font-size:1rem;max-width:580px;margin-left:auto;margin-right:auto;}.lp-cta-group{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+
+    /* PAIN POINTS */
+    .pain-band{background:var(--off-white);padding:6rem 2rem;}
+    .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3.5rem;}
+    .pain-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.8rem;display:flex;align-items:flex-start;gap:1rem;transition:all 0.3s;}
+    .pain-card:hover{border-color:rgba(200,169,110,0.4);box-shadow:0 8px 25px rgba(0,51,102,0.07);}
+    .pain-card .pi{width:44px;height:44px;background:rgba(200,169,110,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .pain-card .pi i{color:var(--gold);font-size:1.1rem;}
+    .pain-card .pt h4{font-weight:700;color:var(--navy);margin-bottom:0.3rem;font-size:0.95rem;}
+    .pain-card .pt p{font-size:0.85rem;color:var(--text-muted);line-height:1.5;}
+    /* SOLUTION GRID */
+    .solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
+    @media(max-width:768px){.solution-grid{grid-template-columns:1fr;gap:2rem;}}
+    .solution-list{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
+    .solution-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem;background:var(--white);border:1px solid var(--border);border-radius:8px;transition:all 0.3s;}
+    .solution-item:hover{border-color:var(--navy);box-shadow:0 5px 20px rgba(0,51,102,0.07);}
+    .solution-item .si-num{width:36px;height:36px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .solution-item .si-num span{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);}
+    .solution-item h4{font-weight:700;color:var(--navy);margin-bottom:0.25rem;font-size:0.95rem;}
+    .solution-item p{font-size:0.85rem;color:var(--text-muted);line-height:1.5;}
+    /* PROFILS */
+    .profil-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-top:3.5rem;}
+    .profil-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;}
+    .profil-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,51,102,0.1);}
+    .profil-card i{font-size:2rem;color:var(--navy);display:block;margin-bottom:1rem;}
+    .profil-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;}
+    .profil-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.5;}
+</style>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Externalisation impression et secrétariat Marseille","provider":{"@type":"LocalBusiness","name":"Polyscribe","telephone":"+33496101280","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"}},"serviceType":"Business outsourcing — printing and secretarial","areaServed":"Marseille","description":"Externalisation de l'impression, des photocopies, de la reliure et du secrétariat pour PME, TPE, cabinets et indépendants à Marseille 13006."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Peut-on externaliser ses photocopies et impressions chez Polyscribe à Marseille ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Polyscribe prend en charge l'externalisation des impressions, photocopies, reliures et travaux de secrétariat pour PME, TPE, cabinets libéraux et indépendants à Marseille. Envoyez vos fichiers par email ou déposez en boutique."}},
+{"@type":"Question","name":"Proposez-vous des services de secrétariat externalisé à Marseille ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Polyscribe propose la frappe de documents, devis, factures, CV, courriers administratifs et dactylographie pour les entreprises et indépendants de Marseille qui souhaitent externaliser leur secrétariat."}},
+{"@type":"Question","name":"Peut-on déposer un volume important de copies chez Polyscribe ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Polyscribe traite aussi bien les petites que les grandes quantités. Pour les entreprises avec des besoins récurrents importants, nous proposons des tarifs dégressifs et des conditions adaptées. Contactez-nous au 04 96 10 12 80."}}
+]}
+</script>
+</head>
+<body>
+    <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">Polyscribe</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="etudiants.html">Étudiants</a></li>
+      <li><a href="externalisation-impression-marseille.html">Externalisation</a></li>
+      <li><a href="index.html#horaires">Horaires</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <a id="nav-status" href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener">
+        <span class="sb-dot"></span><span id="sb-text">…</span>
+      </a>
+      <a href="https://share.google/dS48TenzGdzXZ4b22" target="_blank" rel="noopener" class="nav-google">
+        <i class="fab fa-google"></i>&nbsp;Avis
+      </a>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner"><a href="index.html">Accueil</a><span>›</span><span class="current">Externalisation impression &amp; secrétariat</span></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-hero-bg" style="background-image:url('img/header.jpg');"></div>
+    <div class="lp-hero-overlay"></div>
+    <div class="lp-hero-content">
+      <div class="lp-hero-icon"><i class="fas fa-building"></i></div>
+      <span class="lp-hero-label">Externalisation — Marseille 13006</span>
+      <h1 class="lp-hero-title">Externalisez vos impressions, copies et secrétariat à Marseille</h1>
+      <p class="lp-hero-sub">Polyscribe prend en charge vos photocopies récurrentes, impressions en volume, reliures professionnelles et travaux de secrétariat. Vous gagnez du temps — on s'occupe du reste.</p>
+      <div class="lp-hero-cta">
+        <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 04 96 10 12 80</a>
+        <a href="mailto:contact@polyscribe.fr" class="btn btn-outline"><i class="fas fa-envelope"></i> Demander un devis</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain-band">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:0;">
+        <span class="section-label">Vous reconnaissez-vous ?</span>
+        <h2 class="section-title">Gérer l'impression en interne coûte plus cher qu'on ne le pense</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal reveal-delay-1">
+          <div class="pi"><i class="fas fa-clock"></i></div>
+          <div class="pt"><h4>Temps perdu</h4><p>Vos collaborateurs passent du temps à gérer photocopies, cartouches et bourrages papier au lieu de se concentrer sur leur métier.</p></div>
+        </div>
+        <div class="pain-card reveal reveal-delay-2">
+          <div class="pi"><i class="fas fa-euro-sign"></i></div>
+          <div class="pt"><h4>Coûts cachés</h4><p>Maintenance, consommables, matériel obsolète : le vrai coût de l'impression interne est souvent sous-estimé.</p></div>
+        </div>
+        <div class="pain-card reveal reveal-delay-3">
+          <div class="pi"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="pt"><h4>Qualité variable</h4><p>Une impression mal calibrée sur un matériel bas de gamme peut nuire à l'image de votre entreprise.</p></div>
+        </div>
+        <div class="pain-card reveal reveal-delay-4">
+          <div class="pi"><i class="fas fa-tasks"></i></div>
+          <div class="pt"><h4>Tâches chronophages</h4><p>Frappe de documents, courriers, mise en page, reliure : ces tâches administratives absorbent un temps précieux.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section style="background:var(--white);padding:7rem 2rem;">
+    <div class="solution-grid">
+      <div class="reveal">
+        <span class="section-label">Notre solution</span>
+        <h2 class="section-title">Polyscribe gère tout à votre place</h2>
+        <div class="divider left"></div>
+        <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;margin-bottom:1.5rem;">Déposez ou envoyez vos fichiers. Polyscribe imprime, relie, numérise et rédige selon vos instructions. Vous récupérez un travail fini, professionnel, dans les délais convenus.</p>
+        <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Discuter de mes besoins</a>
+      </div>
+      <div class="solution-list reveal reveal-delay-2">
+        <div class="solution-item">
+          <div class="si-num"><span>1</span></div>
+          <div><h4>Envoyez vos fichiers</h4><p>Par email, clé USB ou dépôt en boutique. PDF, Word, DWG — on accepte tous les formats courants.</p></div>
+        </div>
+        <div class="solution-item">
+          <div class="si-num"><span>2</span></div>
+          <div><h4>On traite dans les délais convenus</h4><p>Impression, reliure, numérisation ou secrétariat — votre commande est traitée selon vos spécifications et délais.</p></div>
+        </div>
+        <div class="solution-item">
+          <div class="si-num"><span>3</span></div>
+          <div><h4>Vous récupérez le travail fini</h4><p>Résultat professionnel, prêt à l'emploi. Facturation claire et transparente, sans surprise.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="lp-services">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label">Services d'externalisation</span>
+        <h2 class="section-title">Ce que nous pouvons prendre en charge pour vous</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="lp-services-grid">
+        <div class="lp-service-card reveal reveal-delay-1">
+          <div class="lp-service-card-icon"><i class="fas fa-copy"></i></div>
+          <h3>Impressions &amp; copies récurrentes</h3>
+          <p>Documents internes, supports clients, rapports mensuels, factures papier. Toutes quantités, N&B ou couleur.</p>
+        </div>
+        <div class="lp-service-card reveal reveal-delay-2">
+          <div class="lp-service-card-icon"><i class="fas fa-pen-fancy"></i></div>
+          <h3>Secrétariat externalisé</h3>
+          <p>Frappe de courriers, devis, factures, rapports, CV. Mise en page professionnelle selon vos modèles.</p>
+        </div>
+        <div class="lp-service-card reveal reveal-delay-3">
+          <div class="lp-service-card-icon"><i class="fas fa-book"></i></div>
+          <h3>Reliure de dossiers professionnels</h3>
+          <p>Dossiers clients, appels d'offres, rapports annuels, mémoires techniques. Reliure spirale ou thermocollée.</p>
+        </div>
+        <div class="lp-service-card reveal reveal-delay-4">
+          <div class="lp-service-card-icon"><i class="fas fa-desktop"></i></div>
+          <h3>Numérisation d'archives</h3>
+          <p>Dématérialisez vos archives papier en fichiers numériques. Jusqu'au format A3, haute résolution.</p>
+        </div>
+        <div class="lp-service-card reveal reveal-delay-1">
+          <div class="lp-service-card-icon"><i class="fas fa-file-invoice"></i></div>
+          <h3>Courriers administratifs</h3>
+          <p>Impression, mise sous pli et préparation de courriers en volume pour vos envois administratifs et commerciaux.</p>
+        </div>
+        <div class="lp-service-card reveal reveal-delay-2">
+          <div class="lp-service-card-icon"><i class="fas fa-crop-alt"></i></div>
+          <h3>Plastification &amp; finition</h3>
+          <p>Plastification de documents importants (A5 à A3), couvertures, menus, supports de présentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILS -->
+  <section style="background:var(--white);padding:7rem 2rem;">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:0;">
+        <span class="section-label">Qui externalise chez Polyscribe ?</span>
+        <h2 class="section-title">Une solution pour chaque profil professionnel</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="profil-cards">
+        <div class="profil-card reveal reveal-delay-1"><i class="fas fa-briefcase"></i><h3>Auto-entrepreneurs</h3><p>Factures, devis, courriers clients — sans imprimante professionnelle ni secrétaire.</p></div>
+        <div class="profil-card reveal reveal-delay-2"><i class="fas fa-building"></i><h3>PME &amp; TPE</h3><p>Externalisez vos impressions récurrentes pour réduire vos coûts fixes et libérer du temps.</p></div>
+        <div class="profil-card reveal reveal-delay-3"><i class="fas fa-gavel"></i><h3>Cabinets d'avocats</h3><p>Conclusions, pièces de procédures, dossiers en volume — discrétion et précision garanties.</p></div>
+        <div class="profil-card reveal reveal-delay-4"><i class="fas fa-drafting-compass"></i><h3>Bureaux d'études</h3><p>Plans, rapports techniques, dossiers de consultation — tirages en série avec qualité professionnelle.</p></div>
+        <div class="profil-card reveal reveal-delay-1"><i class="fas fa-users"></i><h3>Associations</h3><p>Programmes, comptes-rendus, dossiers de subvention — tarifs adaptés aux budgets associatifs.</p></div>
+        <div class="profil-card reveal reveal-delay-2"><i class="fas fa-hospital"></i><h3>Professions libérales</h3><p>Médecins, architectes, comptables, consultants — externalisez sans embauche de secrétaire.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="lp-why">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label" style="color:var(--gold)">Pourquoi Polyscribe ?</span>
+        <h2 class="section-title light">Votre partenaire reprographie depuis 30 ans à Marseille</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="lp-why-grid">
+        <div class="lp-why-card reveal reveal-delay-1"><i class="fas fa-certificate"></i><h3>Qualité professionnelle</h3><p>Matériel Canon haut de gamme. Impression fidèle, nette et durable pour vos documents professionnels.</p></div>
+        <div class="lp-why-card reveal reveal-delay-2"><i class="fas fa-bolt"></i><h3>Réactivité &amp; délais</h3><p>Traitement rapide de vos commandes. Urgences acceptées. Ouvert du lundi au samedi matin.</p></div>
+        <div class="lp-why-card reveal reveal-delay-3"><i class="fas fa-map-marker-alt"></i><h3>Au cœur de Marseille</h3><p>90 rue Edmond Rostand, 13006. Métro Castellane M1/M2/T3. Accessible pour tous les professionnels du centre-ville.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="lp-faq">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Questions fréquentes</span>
+        <h2 class="section-title">Tout ce que vous devez savoir sur l'externalisation</h2>
+        <div class="divider left"></div>
+      </div>
+      <div class="lp-faq-list">
+        <div class="lp-faq-item"><div class="lp-faq-q">Comment fonctionne l'externalisation d'impression chez Polyscribe ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>C'est simple : envoyez vos fichiers par email (contact@polyscribe.fr) ou déposez votre clé USB en boutique avec vos instructions (format, quantité, reliure). Nous traitons votre commande et vous prévenons quand c'est prêt. Vous récupérez un travail fini et professionnel.</p></div></div>
+        <div class="lp-faq-item"><div class="lp-faq-q">Proposez-vous des tarifs dégressifs pour les volumes importants ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui. Plus le volume est important, plus le tarif unitaire est avantageux. Pour les entreprises avec des besoins récurrents, nous pouvons étudier des conditions commerciales adaptées. Contactez-nous au 04 96 10 12 80.</p></div></div>
+        <div class="lp-faq-item"><div class="lp-faq-q">Quels services de secrétariat proposez-vous ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Frappe et mise en page de documents (courriers, rapports, devis, factures), dactylographie, création de modèles Word selon votre charte graphique, relecture et correction de documents. Idéal pour les auto-entrepreneurs et TPE sans secrétaire.</p></div></div>
+        <div class="lp-faq-item"><div class="lp-faq-q">La confidentialité de mes documents est-elle garantie ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui. Polyscribe traite vos documents avec la plus grande discrétion. Vos fichiers sont utilisés uniquement pour la réalisation de votre commande et ne sont pas conservés ni partagés.</p></div></div>
+        <div class="lp-faq-item"><div class="lp-faq-q">Puis-je déposer mes commandes régulièrement ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui, Polyscribe est ouvert du lundi au vendredi de 8h30 à 18h30 (avec pause déjeuner) et le samedi de 9h à 11h30. Vous pouvez passer en boutique ou nous envoyer vos fichiers par email à tout moment.</p></div></div>
+        <div class="lp-faq-item"><div class="lp-faq-q">Proposez-vous la numérisation de grandes quantités de documents ?<i class="fas fa-chevron-down"></i></div><div class="lp-faq-a"><p>Oui, nous numérisons vos archives et dossiers papier jusqu'au format A3, en haute résolution. Pour les gros volumes, contactez-nous pour un devis adapté.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO -->
+  <section class="lp-seo">
+    <div class="container reveal">
+      <span class="section-label">Externalisation Marseille 13006</span>
+      <h2 class="section-title">Externaliser son impression et son secrétariat à Marseille</h2>
+      <div class="divider left"></div>
+      <h3>Pourquoi externaliser ses impressions à Marseille ?</h3>
+      <p>Pour une TPE ou un indépendant marseillais, investir dans du matériel d'impression professionnel, gérer la maintenance et les consommables représente un coût et une charge non négligeables. L'externalisation chez Polyscribe permet de bénéficier d'une impression professionnelle sans immobilisation de capital ni gestion opérationnelle.</p>
+      <h3>Externaliser son secrétariat sans embaucher</h3>
+      <p>Les auto-entrepreneurs, professions libérales et petites structures ont souvent besoin d'un support administratif ponctuel : frappe de documents, rédaction de courriers, mise en page de devis. Polyscribe propose ces services de secrétariat externalisé à la tâche, sans engagement et sans les contraintes d'un recrutement.</p>
+      <h3>Votre partenaire reprographie à Marseille 13006</h3>
+      <p>Situé au 90 rue Edmond Rostand dans le 6e arrondissement de Marseille, Polyscribe est accessible par le métro Castellane (lignes M1 et M2) et le tramway T3, à moins de 2 minutes à pied. Nous sommes ouverts du lundi au vendredi de 8h30 à 18h30 et le samedi de 9h à 11h30.</p>
+      <p style="margin-top:2rem;"><a href="index.html" style="color:var(--navy);">← Retour à l'accueil</a> &nbsp;|&nbsp; <a href="reprographie-marseille.html" style="color:var(--navy);">Tous les services de reprographie</a></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-cta-band">
+    <div class="container reveal">
+      <h2>Prêt à déléguer vos impressions et votre secrétariat ?</h2>
+      <p>Contactez-nous pour discuter de vos besoins et obtenir un devis rapide. Aucun engagement.</p>
+      <div class="lp-cta-group">
+        <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 04 96 10 12 80</a>
+        <a href="mailto:contact@polyscribe.fr" class="btn btn-outline"><i class="fas fa-envelope"></i> Demander un devis</a>
+        <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Polyscribe — 90 rue Edmond Rostand, 13006 Marseille — 04 96 10 12 80 &nbsp;|&nbsp;
+      <a href="#" id="openModal">Mentions légales</a> &nbsp;|&nbsp; <a href="index.html">Accueil</a> &nbsp;|&nbsp; <a href="etudiants.html">Étudiants</a> &nbsp;|&nbsp; <a href="externalisation-impression-marseille.html">Externalisation</a> &nbsp;|&nbsp; <a href="plans-architecte-marseille.html">Plans architecte</a> &nbsp;|&nbsp; <a href="reprographie-marseille.html">Reprographie</a></p>
+  </footer>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h2>Mentions Légales</h2>
+      <p><strong>Éditeur : Hazoumé Adrien</strong> — Polyscribe 13, EURL</p>
+      <p>90, Rue Edmond Rostand – 13006 Marseille</p>
+      <p>Tél. : 04 96 10 12 80 — contact@polyscribe.fr</p>
+      <p><strong>SIRET :</strong> 939 237 491 00013 | <strong>RCS :</strong> Marseille B 939 237 491</p>
+      <p><strong>TVA :</strong> FR 31 939237491 | <strong>Hébergement :</strong> Gandi SAS, Paris</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <script>
+            // ── Statut Ouvert / Fermé ─────────────────────────────────────────────
+    (function(){
+      const H={1:[[510,750],[780,1050]],2:[[510,750],[780,1110]],3:[[510,750],[780,1050]],4:[[510,750],[780,1110]],5:[[510,750],[780,1110]],6:[[540,690]]};
+      const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+      const mins=d=>d.getHours()*60+d.getMinutes();
+      const fmt=(totalMins)=>{const h=Math.floor(totalMins/60),mn=totalMins%60;return h+'h'+(mn?String(mn).padStart(2,'0'):'');};
+      const isOpen=()=>{const n=new Date(),s=H[n.getDay()];return s&&s.some(([a,b])=>mins(n)>=a&&mins(n)<b);};
+      const next=()=>{
+        const n=new Date(),now=mins(n),today=n.getDay();
+        // 1. Chercher un créneau plus tard AUJOURD'HUI
+        const todaySlots=H[today]||[];
+        for(const [a,b] of todaySlots){if(a>now)return `Réouvre aujourd’hui à ${fmt(a)}`;}
+        // 2. Sinon chercher le prochain jour ouvré
+        for(let i=1;i<=7;i++){
+          const d=(today+i)%7,s=H[d];
+          if(s?.length) return 'Ouvre '+DAYS[d]+' à '+fmt(s[0][0]);
+        }
+        return 'Fermé';
+      };
+      const badge=document.getElementById('nav-status'),text=document.getElementById('sb-text');
+      if(isOpen()){badge.classList.add('open');text.textContent='Ouvert';}
+      else{badge.classList.add('closed');text.textContent='Fermé · '+next();}
+    })();
+
+    // ── Navbar scroll ─────────────────────────────────────────────────────
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
+    const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
+    navToggle.addEventListener('click',()=>{
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+    }));
+    const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+    document.querySelectorAll('.lp-faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+    const ov=document.getElementById('modalOverlay');
+    document.getElementById('openModal').addEventListener('click',e=>{e.preventDefault();ov.classList.add('open');});
+    document.getElementById('modalClose').addEventListener('click',()=>ov.classList.remove('open'));
+    ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('open');});
+    window.addEventListener('load',()=>window.cookieconsent.initialise({palette:{popup:{background:'#002244'},button:{background:'#c8a96e',text:'#002244'}},theme:'classic',content:{message:'Ce site utilise des cookies pour vous garantir la meilleure expérience.',dismiss:'Accepter',link:'En savoir plus',href:'https://www.allaboutcookies.org/'}}));
+  </script>
+</body>
+</html>
