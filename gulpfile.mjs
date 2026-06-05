@@ -1,4 +1,6 @@
 import gulp from 'gulp';
+import sharp from 'sharp';
+import path from 'path';
 import * as sass from 'sass';
 import gulpSass from 'gulp-sass';
 import browserSync from 'browser-sync';
@@ -115,6 +117,43 @@ ${urls}
   done();
 });
 
+
+// ── Optimisation et redimensionnement images galerie ───────────────────────
+// Dimensions d'affichage max dans la page :
+// gallery images : ~600px desktop / ~full width mobile → on génère 900px max
+// Logo : affiché à 260px → on génère 520px (2x pour retina)
+const IMAGE_TARGETS = {
+  'img/gallery/photo1.webp': { width: 900, quality: 82 },
+  'img/gallery/photo2.webp': { width: 900, quality: 82 },
+  'img/gallery/photo3.webp': { width: 900, quality: 82 },
+  'img/gallery/photo4.webp': { width: 900, quality: 82 },
+  'img/gallery/photo5.webp': { width: 900, quality: 82 },
+  'img/gallery/photo6.webp': { width: 900, quality: 82 },
+  'img/Logo.webp':            { width: 520, quality: 88 },
+  'img/header.jpg':           { width: 1440, quality: 80 },
+};
+
+gulp.task('images:optimize', async function() {
+  const jobs = Object.entries(IMAGE_TARGETS).map(async ([src, opts]) => {
+    const srcPath = `./${src}`;
+    const distPath = `./dist/${src}`;
+    try {
+      const info = await sharp(srcPath).metadata();
+      // Ne redimensionner que si l'image est plus grande que la cible
+      const resizeOpts = info.width > opts.width ? { width: opts.width } : {};
+      await sharp(srcPath)
+        .resize(resizeOpts)
+        .webp({ quality: opts.quality })
+        .toFile(distPath.endsWith('.webp') ? distPath : distPath.replace(/\.jpg$/, '.webp'));
+      console.log(`  ✓ ${src} optimisé (cible: ${opts.width}px, qualité: ${opts.quality})`);
+    } catch(e) {
+      // Si le fichier source n'existe pas encore, copier simplement
+      console.log(`  ⚠ ${src} non trouvé, ignoré`);
+    }
+  });
+  await Promise.all(jobs);
+});
+
 // Create _redirects file in dist (SPA fallback, exclut les fichiers SEO)
 gulp.task('redirects', function(done) {
   console.log('Creating _redirects file');
@@ -137,7 +176,7 @@ gulp.task('browserSync', function() {
 });
 
 // Build task
-gulp.task('build', gulp.series('scss', 'css', 'js', 'html', 'vendor', 'images', 'seo', 'redirects'));
+gulp.task('build', gulp.series('scss', 'css', 'js', 'html', 'vendor', 'images', 'images:optimize', 'seo', 'redirects'));
 
 // Dev task
 gulp.task('dev', gulp.series('build', 'browserSync', function() {
