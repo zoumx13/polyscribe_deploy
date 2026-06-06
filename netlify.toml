@@ -2,10 +2,30 @@
   command = "npm run build"
   publish = "dist"
 
+# ── Headers de sécurité ───────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Anti-clickjacking
+    X-Frame-Options = "SAMEORIGIN"
+    # Anti-sniffing MIME
+    X-Content-Type-Options = "nosniff"
+    # Protection XSS navigateurs anciens
+    X-XSS-Protection = "1; mode=block"
+    # Contrôle du referrer
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Permissions navigateur (désactiver caméra/micro non utilisés)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # HSTS : forcer HTTPS pendant 1 an
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # CSP : autoriser uniquement les sources connues
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com https://www.google.com https://www.gstatic.com; media-src 'self'; connect-src 'self' https://api.anthropic.com; frame-ancestors 'none';"
+
+# ── Redirections ──────────────────────────────────────────────────────────────
 [[redirects]]
   from = "https://polyscribe.fr/*"
   to = "https://www.polyscribe.fr/:splat"
-  statues = 301
+  status = 301
   force = true
 
 [[redirects]]
