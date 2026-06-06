@@ -130,13 +130,13 @@
 
     /* ══ HERO ═════════════════════════════════════════════════════════════════ */
     #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--navy-dark);}
-    /* Fallback image (s'affiche si vidéo désactivée ou non supportée) */
-    .hero-bg{position:absolute;inset:0;background-image:url('img/header.jpg');background-size:cover;background-position:center;opacity:0.35;}
+    /* Image fallback — masquée sur desktop (vidéo active), visible sur mobile */
+    .hero-bg{position:absolute;inset:0;background-image:url('img/header.jpg');background-size:cover;background-position:center;opacity:0;z-index:0;}
     /* Vidéo hero */
-    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.28;z-index:0;}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,34,68,0.88) 0%,rgba(0,51,102,0.65) 100%);z-index:1;}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;z-index:0;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,34,68,0.80) 0%,rgba(0,51,102,0.55) 100%);z-index:1;}
     .hero-content{z-index:2;}
-    /* Sur mobile : désactiver la vidéo pour économiser batterie */
+    /* Mobile : vidéo off → image de fond */
     @media(max-width:768px){.hero-video{display:none;}.hero-bg{opacity:0.35;}}
     .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px;}
     .hero-logo{max-width:260px;width:50vw;height:auto;margin:0 auto 2rem;display:block;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.4));animation:fadeInDown 0.8s ease both;}
