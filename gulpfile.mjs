@@ -52,12 +52,56 @@ gulp.task('js', function() {
     .pipe(bs.stream());
 });
 
-// Copy HTML files to dist
-gulp.task('html', function() {
-  console.log('Running HTML task');
-  return gulp.src('./*.html')
-    .pipe(gulp.dest('./dist'))
-    .pipe(bs.stream());
+// Injecter la navbar depuis _navbar.html dans toutes les pages HTML
+gulp.task('html', function(done) {
+  console.log('Running HTML task with navbar injection');
+
+  const navbarSrc  = fs.readFileSync('./_navbar.html', 'utf8');
+
+  // Extraire CSS, HTML, JS depuis _navbar.html
+  const cssMatch  = navbarSrc.match(/<!-- CSS_START -->([\s\S]*?)<!-- CSS_END -->/);
+  const htmlMatch = navbarSrc.match(/<!-- HTML_START -->([\s\S]*?)<!-- HTML_END -->/);
+  const jsMatch   = navbarSrc.match(/<!-- JS_START -->([\s\S]*?)<!-- JS_END -->/);
+
+  const navCSS  = cssMatch  ? cssMatch[1].trim()  : '';
+  const navHTML = htmlMatch ? htmlMatch[1].trim()  : '';
+  const navJS   = jsMatch   ? jsMatch[1].trim()   : '';
+
+  // Version index : liens internes (#services etc.)
+  const navHTMLIndex = navHTML
+    .replace(/href="index\.html#/g, 'href="#')
+    .replace(/href="index\.html"/g, 'href="#hero"');
+
+  const htmlFiles = fs.readdirSync('.').filter(f => f.endsWith('.html') && !f.startsWith('_'));
+
+  htmlFiles.forEach(fname => {
+    let html = fs.readFileSync(fname, 'utf8');
+    const isIndex = fname === 'index.html';
+    const useHTML = isIndex ? navHTMLIndex : navHTML;
+
+    // Remplacer le bloc CSS navbar
+    html = html.replace(
+      /\/\* ══ NAVBAR ═[\s\S]*?\.nav-links a\{color:var\(--navy\)!important;[^}]*\}\s*\}/,
+      navCSS
+    );
+
+    // Remplacer le bloc HTML navbar
+    html = html.replace(
+      /  <!-- NAVBAR -->[\s\S]*?  <\/nav>/,
+      useHTML
+    );
+
+    // Remplacer le bloc JS navbar (statut + toggle)
+    html = html.replace(
+      /\/\/ ── Statut Ouvert \/ Fermé ─[\s\S]*?navLinks\.querySelectorAll[\s\S]*?\}\)\);/,
+      navJS
+    );
+
+    fs.writeFileSync('./dist/' + fname, html);
+  });
+
+  bs.reload();
+  done();
 });
 
 // Copy vendor files to dist
