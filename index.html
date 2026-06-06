@@ -1040,7 +1040,26 @@
     })();
 
     // ── Cookies ───────────────────────────────────────────────────────────
-    window.addEventListener('load',()=>window.cookieconsent.initialise({palette:{popup:{background:'#002244'},button:{background:'#c8a96e',text:'#002244'}},theme:'classic',content:{message:'Ce site utilise des cookies pour vous garantir la meilleure expérience.',dismiss:'Accepter',link:'En savoir plus',href:'https://www.allaboutcookies.org/'}}));
+    window.addEventListener('load',()=>window.cookieconsent.initialise({
+      palette:{popup:{background:'#002244',text:'rgba(255,255,255,0.85)'},button:{background:'#c8a96e',text:'#002244'}},
+      theme:'classic',
+      position:'bottom',
+      content:{
+        message:'Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de tracking n'est utilisé.',
+        dismiss:'J'ai compris',
+        link:'Mentions légales',
+        href:'#',
+        target:'_self'
+      },
+      onInitialise: function(status){
+        // Ouvrir la modal mentions légales si clic sur le lien
+        var link = document.querySelector('.cc-link');
+        if(link){ link.addEventListener('click', function(e){
+          e.preventDefault();
+          document.getElementById('modalOverlay').classList.add('open');
+        });}
+      }
+    }));
   
     // ── Révéler téléphone au clic ───────────────────────────────────────────
     document.querySelectorAll('.reveal-tel').forEach(function(el){
