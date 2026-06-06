@@ -20,7 +20,7 @@
   <meta name="geo.placename" content="Marseille">
   <meta name="geo.position" content="43.2855;5.3845">
   <meta name="ICBM" content="43.2855, 5.3845">
-  <title>Reprographie &amp; Scan Marseille 13006 Castellane | Mémoire, Rapport Stage BTS, Plans A0 — Polyscribe</title>
+  <title>Reprographie Marseille 13006 | Plans A0, Mémoire — Polyscribe</title>
   <link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-512.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-512.png">
@@ -1045,14 +1045,13 @@
       theme:'classic',
       position:'bottom',
       content:{
-        message:'Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de tracking n'est utilisé.',
-        dismiss:'J'ai compris',
+        message:"Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de tracking n'est utilisé.",
+        dismiss:"J'ai compris",
         link:'Mentions légales',
         href:'#',
         target:'_self'
       },
       onInitialise: function(status){
-        // Ouvrir la modal mentions légales si clic sur le lien
         var link = document.querySelector('.cc-link');
         if(link){ link.addEventListener('click', function(e){
           e.preventDefault();
