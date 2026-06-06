@@ -112,6 +112,8 @@
     .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:3px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;transition:all 0.3s ease;cursor:pointer;border:none;}
     .btn-primary{background:var(--gold);color:var(--navy-dark);}.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,169,110,0.4);}
     .btn-outline{background:transparent;color:rgba(255,255,255,0.9);border:1.5px solid rgba(255,255,255,0.5);}.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.9);color:#fff;transform:translateY(-2px);}
+    .btn-smash{background:transparent;color:rgba(255,255,255,0.9);border:1.5px solid rgba(255,255,255,0.5);}.btn-smash:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.9);color:#fff;transform:translateY(-2px);}
+    .btn-whatsapp{background:#25D366;color:#fff;border:none;}.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,211,102,0.4);}
     .btn-navy{background:var(--navy);color:#fff;}.btn-navy:hover{background:var(--navy-light);transform:translateY(-2px);}
     section{padding:5.5rem 2rem;}.container{max-width:1100px;margin:0 auto;}
     .section-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--gold);margin-bottom:0.6rem;display:block;}
@@ -163,6 +165,13 @@
     .histoire-texte p{margin-bottom:1.1rem;}
     .histoire-texte p:last-child{margin-bottom:0;}
     .histoire-ligne{width:44px;height:3px;background:var(--gold);margin:1.5rem auto 0;}
+
+    /* ── WhatsApp flottant ── */
+    #wa-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);text-decoration:none;transition:all 0.3s;}
+    #wa-float:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,0.6);}
+    #wa-float i{color:#fff;font-size:1.4rem;}
+    #wa-float .wa-tooltip{position:absolute;right:60px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.72rem;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
+    #wa-float:hover .wa-tooltip{opacity:1;}
     /* ══ TRUST BAR ════════════════════════════════════════════════════════════ */
     .trust-bar{background:var(--navy);padding:0.9rem 2rem;}
     .trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem;}
@@ -483,6 +492,7 @@
       <div class="hero-cta-group">
         <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span class="reveal-tel" title="Cliquer pour afficher">04&#160;96&#160;10&#160;12&#160;••</span></a>
         <a href="mailto:contact@polyscribe.fr" class="btn btn-outline"><i class="fas fa-envelope"></i> Envoyer un fichier</a>
+        <a href="https://fromsmash.com" target="_blank" rel="noopener" class="btn btn-smash" title="Envoyer un fichier volumineux via Smash (gratuit, sécurisé, hébergé en France)"><i class="fas fa-cloud-upload-alt"></i> Fichier volumineux</a>
         <a href="#horaires" class="btn btn-outline"><i class="fas fa-clock"></i> Horaires</a>
       </div>
       <div class="audience-cards">
@@ -508,6 +518,20 @@
     </div>
     <div class="scroll-indicator"><span></span></div>
   </section>
+
+  <!-- WhatsApp flottant -->
+  <a id="wa-float" href="#" aria-label="Nous contacter sur WhatsApp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">WhatsApp</span>
+  </a>
+  <script>
+    // Numéro WhatsApp reconstruit côté client — non lisible par les scrapers
+    (function(){
+      var n = '337' + '668' + '222' + '22';
+      var msg = encodeURIComponent('Bonjour Polyscribe, je souhaite imprimer un document.');
+      document.getElementById('wa-float').href = 'https://wa.me/' + n + '?text=' + msg;
+    })();
+  </script>
 
   <!-- TRUST BAR -->
   <div class="trust-bar">
