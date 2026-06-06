@@ -156,13 +156,28 @@ gulp.task('images:optimize', async function() {
 
 // Create _redirects file in dist (SPA fallback, exclut les fichiers SEO)
 gulp.task('redirects', function(done) {
-  console.log('Creating _redirects file');
+  console.log('Creating _redirects and _headers files');
+  
+  // Redirections
   const rules = [
     '/sitemap.xml  /sitemap.xml  200',
     '/robots.txt   /robots.txt   200',
     '/*            /index.html   200'
   ].join('\n');
   fs.writeFileSync('./dist/_redirects', rules);
+
+  // Headers de sécurité
+  const headers = `/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com https://www.google.com https://www.gstatic.com; media-src 'self'; connect-src 'self'; frame-ancestors 'none';
+`;
+  fs.writeFileSync('./dist/_headers', headers);
+  console.log('Security headers written to dist/_headers');
   done();
 });
 
