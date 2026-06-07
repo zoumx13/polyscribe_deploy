@@ -230,14 +230,14 @@
     /* ══ HORAIRES ═════════════════════════════════════════════════════════════ */
     .hours-row{display:flex;justify-content:space-between;padding:0.8rem 0;border-bottom:1px solid var(--border);}
     .hours-row:last-child{border-bottom:none;}
-    .hours-row span:first-child{color:var(--white);font-weight:600;min-width:130px;}
-    .hours-row span:last-child{color:rgba(255,255,255,0.75);text-align:right;line-height:1.5;}
+    .hours-row span:first-child{color:var(--navy);font-weight:600;min-width:130px;}
+    .hours-row span:last-child{color:var(--text-muted);text-align:right;line-height:1.5;}
     .opening-badge{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;padding:0.4rem 0.9rem;background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.3);border-radius:20px;color:var(--gold);font-size:0.76rem;}
     .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
     .info-card{padding:2rem 1.5rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--white);transition:all 0.3s;box-shadow:0 2px 12px rgba(0,34,68,0.06);}.info-card:hover{border-color:rgba(200,169,110,0.4);background:rgba(255,255,255,0.04);}
     .info-card-icon{width:50px;height:50px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;}.info-card-icon i{font-size:1.2rem;color:var(--gold);}
-    .info-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);margin-bottom:0.9rem;text-transform:uppercase;letter-spacing:0.06em;}
-    .info-card p,.info-card a{color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:2;text-decoration:none;}.info-card a:hover{color:var(--gold);}
+    .info-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.9rem;text-transform:uppercase;letter-spacing:0.06em;}
+    .info-card p,.info-card a{color:var(--text-muted);font-size:0.9rem;line-height:2;text-decoration:none;}.info-card a:hover{color:var(--navy);}
     .transport-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.3);padding:0.28rem 0.8rem;border-radius:20px;font-size:0.74rem;color:var(--gold);margin-top:0.5rem;}
     @media(max-width:768px){.info-grid{grid-template-columns:1fr;}}
 
@@ -458,7 +458,7 @@
 
   <!-- FLOATING BUTTON -->
   <a href="mailto:&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#111;&#108;&#121;&#115;&#99;&#114;&#105;&#98;&#101;&#46;&#102;&#114;" id="float-send" title="Envoyer mon fichier à imprimer">
-    <i class="fas fa-paper-plane"></i><span>Envoyer mon fichier</span>
+    <i class="fas fa-envelope"></i><span>Envoyer mon fichier</span>
   </a>
 
   <!-- NAVBAR -->
@@ -640,7 +640,7 @@
           <div class="gm-overlay"></div>
           <span class="gm-caption">Intérieur &amp; accueil</span>
         </div>
-        <div class="gm-item reveal reveal-delay-2">
+        <div class="gm-item portrait reveal reveal-delay-2">
           <img src="img/gallery/photo1.webp" alt="Formats d'impression disponibles A4 A3 A2 A1 A0 reprographie Marseille" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="400" height="200">
           <div class="gm-overlay"></div>
           <span class="gm-caption">Tous formats A6 à A0</span>
@@ -857,7 +857,13 @@
 
   <!-- SEO + GEO -->
   <section id="seo">
-    <div class="container reveal">
+    <div class="container">
+      <details>
+        <summary style="padding:0.9rem 1.2rem;cursor:pointer;font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;color:var(--navy);background:var(--white);border:1px solid var(--border);border-radius:var(--radius);display:flex;justify-content:space-between;align-items:center;list-style:none;user-select:none;margin-bottom:0;">
+          <span><i class="fas fa-info-circle" style="color:var(--gold);margin-right:8px;"></i>Fiche établissement &amp; informations détaillées</span>
+          <i class="fas fa-chevron-down" style="font-size:0.7rem;color:var(--gold);"></i>
+        </summary>
+        <div style="padding:1.5rem 0.5rem 0.5rem;" class="reveal">
       <span class="section-label">Reprographie Marseille 6e arrondissement</span>
       <h2 class="section-title">Impression et reprographie à Marseille depuis 30 ans</h2>
       <div class="divider left"></div>
@@ -902,6 +908,8 @@
           <div class="geo-item"><span class="geo-label">Zone de chalandise</span><span class="geo-value">Marseille, 13005, 13006, 13007, 13008, 13009</span></div>
         </div>
       </div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -910,9 +918,9 @@
       <a href="#" id="openModal">Mentions légales</a> &nbsp;|&nbsp;
       <a href="index.html">Accueil</a> &nbsp;|&nbsp;
       <a href="etudiants.html">Étudiants</a> &nbsp;|&nbsp;
-      <a href="externalisation-impression-marseille.html">Externalisation</a> &nbsp;|&nbsp;
-      <a href="plans-architecte-marseille.html">Plans architecte</a> &nbsp;|&nbsp;
-      <a href="reprographie-marseille.html">Reprographie</a>
+      <a href="externalisation-impression-marseille.html">Professionnels</a> &nbsp;|&nbsp;
+      <a href="reprographie-marseille.html">Particuliers</a> &nbsp;|&nbsp;
+      <a href="plans-architecte-marseille.html">Plans architecte</a>
     </p>
   </footer>
 

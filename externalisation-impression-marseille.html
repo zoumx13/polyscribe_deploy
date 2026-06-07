@@ -160,7 +160,7 @@
     /* Centrage dernière ligne profil-cards */
     .profil-cards::after{content:"";grid-column:span 1;}
     .profil-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem;justify-content:center;}
-    .profil-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;}
+    .profil-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;cursor:pointer;}
     .profil-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,51,102,0.1);}
     .profil-card i{font-size:2rem;color:var(--navy);display:block;margin-bottom:1rem;}
     .profil-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;}
@@ -353,12 +353,12 @@
         <div class="divider"></div>
       </div>
       <div class="profil-cards">
-        <div class="profil-card reveal reveal-delay-1"><i class="fas fa-briefcase"></i><h3>Auto-entrepreneurs</h3><p>Factures, devis, courriers clients — sans imprimante professionnelle ni secrétaire.</p></div>
-        <div class="profil-card reveal reveal-delay-2"><i class="fas fa-building"></i><h3>PME &amp; TPE</h3><p>Externalisez vos impressions récurrentes pour réduire vos coûts fixes et libérer du temps.</p></div>
-        <div class="profil-card reveal reveal-delay-3"><i class="fas fa-gavel"></i><h3>Cabinets d'avocats</h3><p>Conclusions, pièces de procédures, dossiers en volume — discrétion et précision garanties.</p></div>
-        <div class="profil-card reveal reveal-delay-4"><i class="fas fa-drafting-compass"></i><h3>Bureaux d'études</h3><p>Plans, rapports techniques, dossiers de consultation — tirages en série avec qualité professionnelle.</p></div>
-        <div class="profil-card reveal reveal-delay-1"><i class="fas fa-users"></i><h3>Associations</h3><p>Programmes, comptes-rendus, dossiers de subvention — tarifs adaptés aux budgets associatifs.</p></div>
-        <div class="profil-card reveal reveal-delay-2"><i class="fas fa-hospital"></i><h3>Professions libérales</h3><p>Médecins, architectes, comptables, consultants — externalisez sans embauche de secrétaire.</p></div>
+        <a href="autoentrepreneurs.html" class="profil-card reveal reveal-delay-1" style="text-decoration:none;display:block;"><i class="fas fa-briefcase"></i><h3>Auto-entrepreneurs</h3><p>Factures, devis, courriers clients — sans imprimante professionnelle ni secrétaire.</p></a>
+        <a href="externalisation-impression-marseille.html" class="profil-card reveal reveal-delay-2" style="text-decoration:none;display:block;"><i class="fas fa-building"></i><h3>PME &amp; TPE</h3><p>Externalisez vos impressions récurrentes pour réduire vos coûts fixes et libérer du temps.</p></a>
+        <a href="avocats.html" class="profil-card reveal reveal-delay-3" style="text-decoration:none;display:block;"><i class="fas fa-gavel"></i><h3>Cabinets d'avocats</h3><p>Conclusions, pièces de procédures, dossiers en volume — discrétion et précision garanties.</p></a>
+        <a href="architectes.html" class="profil-card reveal reveal-delay-4" style="text-decoration:none;display:block;"><i class="fas fa-drafting-compass"></i><h3>Bureaux d'études</h3><p>Plans, rapports techniques, dossiers de consultation — tirages en série avec qualité professionnelle.</p></a>
+        <a href="associations.html" class="profil-card reveal reveal-delay-1" style="text-decoration:none;display:block;"><i class="fas fa-users"></i><h3>Associations</h3><p>Programmes, comptes-rendus, dossiers de subvention — tarifs adaptés aux budgets associatifs.</p></a>
+        <a href="avocats.html" class="profil-card reveal reveal-delay-2" style="text-decoration:none;display:block;"><i class="fas fa-hospital"></i><h3>Professions libérales</h3><p>Médecins, architectes, comptables, consultants — externalisez sans embauche de secrétaire.</p></a>
       </div>
     </div>
   </section>
