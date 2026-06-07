@@ -155,6 +155,14 @@
     #wa-float i{color:#fff;font-size:1.4rem;}
     #wa-float .wa-tooltip{position:absolute;right:60px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.72rem;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
     #wa-float:hover .wa-tooltip{opacity:1;}
+  
+    /* ── Grids : dernière ligne centrée si incomplète ── */
+    .lp-services-grid,.pain-grid,.profil-cards,.lp-why-grid,.pref-langs{
+      justify-content:center;
+    }
+    .lp-services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+    .profil-cards{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+    .pain-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
   </style>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Impression et photocopies pour particuliers Marseille 13006","provider":{"@type":"LocalBusiness","name":"Polyscribe","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"},"telephone":"+33496101280"},"serviceType":"Reprography","areaServed":"Marseille","description":"Impression et photocopies pour particuliers à Marseille 13006 — dès 1 copie, sans minimum de commande. Affiches, flyers, photos, numérisation/scan. Polyscribe, métro Castellane, ouvert samedi."}

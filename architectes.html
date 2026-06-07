@@ -142,6 +142,14 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.5);text-align:center
     #wa-float i{color:#fff;font-size:1.4rem;}
     #wa-float .wa-tooltip{position:absolute;right:60px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.72rem;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
     #wa-float:hover .wa-tooltip{opacity:1;}
+  
+    /* ── Grids : dernière ligne centrée si incomplète ── */
+    .lp-services-grid,.pain-grid,.profil-cards,.lp-why-grid,.pref-langs{
+      justify-content:center;
+    }
+    .lp-services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+    .profil-cards{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+    .pain-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
   </style>
 
   <script type="application/ld+json">
