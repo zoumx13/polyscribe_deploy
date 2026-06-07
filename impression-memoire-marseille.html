@@ -99,7 +99,7 @@
     .modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,22,44,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem;}.modal-overlay.open{display:flex;}
     .modal-box{background:var(--white);border-radius:8px;padding:2.5rem;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
     .modal-box h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1.5rem;font-size:1.5rem;}.modal-box p{font-size:0.88rem;line-height:1.7;margin-bottom:0.7rem;color:var(--text-muted);}.modal-box p strong{color:var(--text);}
-    .modal-close{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);transition:color 0.2s;width:32px;height:32px;display:flex;align-items:center;justify-content:center;}.modal-close:hover{color:var(--navy);}
+    .modal-close{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);width:32px;height:32px;display:flex;align-items:center;justify-content:center;}.modal-close:hover{color:var(--navy);}
     .lp-hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--navy-dark);}
     .lp-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.22;}
     .lp-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,34,68,0.92) 0%,rgba(0,51,102,0.65) 100%);}
@@ -119,13 +119,13 @@
     .lp-stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:0.4rem;}.lp-stat-label{font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
     @media(max-width:768px){.lp-intro-grid{grid-template-columns:1fr;gap:2.5rem;}}
     .lp-services{background:var(--off-white);}.services-header{text-align:center;margin-bottom:1rem;}
-    .lp-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3.5rem;}
+    .lp-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;justify-content:center;}
     .lp-service-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:all 0.35s;}
     .lp-service-card::after{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.35s;}.lp-service-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,51,102,0.1);border-color:rgba(0,51,102,0.2);}.lp-service-card:hover::after{height:100%;}
     .lp-service-card-icon{width:52px;height:52px;background:var(--navy-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;transition:all 0.3s;}.lp-service-card:hover .lp-service-card-icon{background:var(--navy);}
     .lp-service-card-icon i{font-size:1.4rem;color:var(--navy);transition:color 0.3s;}.lp-service-card:hover .lp-service-card-icon i{color:var(--gold);}
     .lp-service-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.6rem;}.lp-service-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.65;}
-    .lp-why{background:var(--navy);}.lp-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;}
+    .lp-why{background:var(--navy);}.lp-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
     .lp-why-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;}.lp-why-card:hover{background:rgba(255,255,255,0.09);border-color:rgba(200,169,110,0.35);transform:translateY(-3px);}
     .lp-why-card i{font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;}.lp-why-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:0.6rem;}.lp-why-card p{font-size:0.86rem;color:rgba(255,255,255,0.65);line-height:1.65;}
     @media(max-width:768px){.lp-why-grid{grid-template-columns:1fr;}}
@@ -357,23 +357,47 @@
     <p>© 2026 Polyscribe — 90 rue Edmond Rostand, 13006 Marseille — <span class="reveal-tel" title="Cliquer pour afficher">04&#160;96&#160;10&#160;12&#160;••</span> &nbsp;|&nbsp;
       <a href="#" id="openModal">Mentions légales</a> &nbsp;|&nbsp;
       <a href="index.html">Accueil</a> &nbsp;|&nbsp;
-      <a href="reprographie-marseille.html">Reprographie</a> &nbsp;|&nbsp;
+      <a href="etudiants.html">Étudiants</a> &nbsp;|&nbsp;
+      <a href="externalisation-impression-marseille.html">Externalisation</a> &nbsp;|&nbsp;
       <a href="plans-architecte-marseille.html">Plans architecte</a> &nbsp;|&nbsp;
-      <a href="impression-memoire-marseille.html">Impression mémoire</a>
+      <a href="reprographie-marseille.html">Reprographie</a>
     </p>
   </footer>
 
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal-box">
-      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+      <button class="modal-close" id="modalClose">✕</button>
       <h2>Mentions Légales</h2>
-      <p><strong>Éditeur du site : Hazoumé Adrien</strong></p>
-      <p>Nom de l'entreprise : Polyscribe 13 — Forme juridique : EURL</p>
-      <p>Adresse : 90, Rue Edmond Rostand – 13006 Marseille</p>
-      <p>Tél. : <span class="reveal-tel" title="Cliquer pour afficher">04&#160;96&#160;10&#160;12&#160;••</span> — &#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#111;&#108;&#121;&#115;&#99;&#114;&#105;&#98;&#101;&#46;&#102;&#114;</p>
-      <p><strong>SIRET :</strong> 939 237 491 00013 | <strong>RCS :</strong> Marseille B 939 237 491</p>
-      <p><strong>TVA intracommunautaire :</strong> FR 31 939237491</p>
-      <p><strong>Hébergement :</strong> Gandi SAS – 63-65 Bd Massena, 75013 Paris</p>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:1.2rem 0 0.4rem;">Éditeur du site</h3>
+      <p><strong>Raison sociale :</strong> Polyscribe 13</p>
+      <p><strong>Forme juridique :</strong> EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</p>
+      <p><strong>Dirigeant :</strong> Hazoumé Adrien</p>
+      <p><strong>Directeur de publication :</strong> Hazoumé Adrien</p>
+      <p><strong>Adresse :</strong> 90, Rue Edmond Rostand – 13006 Marseille</p>
+      <p><strong>Téléphone :</strong> <span class="reveal-tel" title="Cliquer pour afficher">04&#160;96&#160;10&#160;12&#160;••</span></p>
+      <p><strong>Email :</strong> &#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#111;&#108;&#121;&#115;&#99;&#114;&#105;&#98;&#101;&#46;&#102;&#114;</p>
+      <p><strong>SIRET :</strong> 939 237 491 00013</p>
+      <p><strong>RCS :</strong> Marseille B 939 237 491</p>
+      <p><strong>N° TVA intracommunautaire :</strong> FR 31 939237491</p>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:1.2rem 0 0.4rem;">Hébergement</h3>
+      <p><strong>Hébergeur :</strong> Netlify, Inc.</p>
+      <p><strong>Adresse :</strong> 512 Second Street, Suite 200, San Francisco, CA 94107, USA</p>
+      <p><strong>Site :</strong> www.netlify.com</p>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:1.2rem 0 0.4rem;">Protection des données personnelles (RGPD)</h3>
+      <p>Ce site ne collecte aucune donnée personnelle à l'exception des cookies nécessaires à son bon fonctionnement. Aucune donnée n'est transmise à des tiers à des fins commerciales.</p>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous à : <strong>&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#111;&#108;&#121;&#115;&#99;&#114;&#105;&#98;&#101;&#46;&#102;&#114;</strong></p>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:1.2rem 0 0.4rem;">Médiation de la consommation</h3>
+      <p>Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige. En cas de litige non résolu à l'amiable, vous pouvez contacter Polyscribe directement à <strong>contact@polyscribe.fr</strong> pour trouver une solution. La liste des médiateurs agréés est disponible sur le site de la Commission d'Évaluation et de Contrôle de la Médiation de la Consommation : <strong>www.economie.gouv.fr</strong>.</p>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:1.2rem 0 0.4rem;">Propriété intellectuelle</h3>
+      <p>L'ensemble du contenu de ce site (textes, images, logos) est la propriété exclusive de Polyscribe 13 et est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin:1.2rem 0 0.4rem;">Droit applicable</h3>
+      <p>Le présent site est soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
@@ -422,9 +446,23 @@
     document.getElementById('modalClose').addEventListener('click',()=>overlay.classList.remove('open'));
     overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open');});
     window.addEventListener('load',()=>window.cookieconsent.initialise({
-      palette:{popup:{background:'#002244'},button:{background:'#c8a96e',text:'#002244'}},
+      palette:{popup:{background:'#002244',text:'rgba(255,255,255,0.85)'},button:{background:'#c8a96e',text:'#002244'}},
       theme:'classic',
-      content:{message:'Ce site utilise des cookies pour vous garantir la meilleure expérience.',dismiss:'Accepter',link:'En savoir plus',href:'https://www.allaboutcookies.org/'}
+      position:'bottom',
+      content:{
+        message:"Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de tracking n'est utilisé.",
+        dismiss:"J'ai compris",
+        link:'Mentions légales',
+        href:'#',
+        target:'_self'
+      },
+      onInitialise: function(status){
+        var link = document.querySelector('.cc-link');
+        if(link){ link.addEventListener('click', function(e){
+          e.preventDefault();
+          document.getElementById('modalOverlay').classList.add('open');
+        });}
+      }
     }));
   
     // ── Révéler téléphone au clic ───────────────────────────────────────────
