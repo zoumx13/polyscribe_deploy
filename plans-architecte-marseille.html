@@ -143,6 +143,18 @@
     /* ── Protection coordonnées ── */
     .reveal-tel{cursor:pointer;border-bottom:1px dashed currentColor;white-space:nowrap;display:inline-block;}
     .reveal-tel:hover{opacity:0.8;}
+      /* ── Bouton flottant Envoyer fichier ── */
+    #float-send{position:fixed;bottom:1.8rem;right:1.8rem;z-index:900;display:flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--navy-dark);font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.7rem 1.3rem;border-radius:30px;text-decoration:none;box-shadow:0 5px 22px rgba(200,169,110,.45);transition:all .3s;white-space:nowrap;}
+    #float-send:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 8px 30px rgba(200,169,110,.5);}
+    #float-send i{font-size:0.92rem;}
+    @media(max-width:480px){#float-send span{display:none;}#float-send{padding:.7rem;border-radius:50%;}}
+    /* ── WhatsApp flottant (mobile/tablette uniquement) ── */
+    #wa-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:none;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);text-decoration:none;transition:all 0.3s;}
+    @media(max-width:1024px){#wa-float{display:flex;}}
+    #wa-float:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,0.6);}
+    #wa-float i{color:#fff;font-size:1.4rem;}
+    #wa-float .wa-tooltip{position:absolute;right:60px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.72rem;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
+    #wa-float:hover .wa-tooltip{opacity:1;}
   </style>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Impression plans architecte Marseille","provider":{"@type":"LocalBusiness","name":"Polyscribe","telephone":"+33496101280","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"}},"serviceType":"Blueprint printing","areaServed":"Marseille","description":"Tirage de plans architecte A0, A1, A2 à Marseille. Plans permis de construire, dossiers de chantier, couleur et N&B."}
@@ -416,6 +428,21 @@
         this.outerHTML='<a href="tel:+33496101280" style="color:inherit;text-decoration:none;font-weight:inherit;">04 96 10 12 80</a>';
       });
     });
+  </script>
+  <!-- Boutons flottants -->
+  <a href="mailto:contact@polyscribe.fr" id="float-send" title="Envoyer mon fichier à imprimer">
+    <i class="fas fa-paper-plane"></i><span>Envoyer mon fichier</span>
+  </a>
+  <a id="wa-float" href="#" aria-label="Nous contacter sur WhatsApp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">WhatsApp</span>
+  </a>
+  <script>
+    (function(){
+      var n = '337' + '668' + '222' + '22';
+      var msg = encodeURIComponent('Bonjour Polyscribe, pouvez-vous me renseigner ?');
+      document.getElementById('wa-float').href = 'https://api.whatsapp.com/send?phone=' + n + '&text=' + msg;
+    })();
   </script>
 </body>
 </html>

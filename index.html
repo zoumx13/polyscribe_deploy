@@ -553,7 +553,7 @@
         <h2 class="section-title">Ce que nous faisons pour vous</h2>
         <div class="divider"></div>
       </div>
-      <div class="services-grid">
+      <div class="services-grid" data-autogrid>
         <a href="plans-architecte-marseille.html" class="service-card reveal reveal-delay-1">
           <div class="si"><i class="fas fa-map"></i></div>
           <h3>Plans A0 A1 A2</h3><p>Tirage, permis de construire, DCE. N&amp;B et couleur.</p>
@@ -1059,6 +1059,33 @@
     }));
 
 
+
+    // ── Auto-grid : ajuste les colonnes selon le nb d'items ─────────────────
+    (function(){
+      document.querySelectorAll('[data-autogrid]').forEach(function(grid){
+        var items = grid.children.length;
+        var cols;
+        if(items <= 2) cols = items;
+        else if(items === 3) cols = 3;
+        else if(items === 4) cols = 2;
+        else if(items <= 6) cols = 3;
+        else if(items <= 8) cols = 4;
+        else cols = 3;
+        grid.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+      });
+      // Responsive : recalculer sur resize
+      window.addEventListener('resize', function(){
+        if(window.innerWidth <= 768){
+          document.querySelectorAll('[data-autogrid]').forEach(function(g){
+            g.style.gridTemplateColumns = 'repeat(2, 1fr)';
+          });
+        } else if(window.innerWidth <= 480){
+          document.querySelectorAll('[data-autogrid]').forEach(function(g){
+            g.style.gridTemplateColumns = '1fr';
+          });
+        }
+      });
+    })();
     // ── Carrousel avis ────────────────────────────────────────────────────
     (function(){
       const track = document.getElementById('reviewTrack');

@@ -211,6 +211,14 @@
     /* ── Protection coordonnées ── */
     .reveal-tel{cursor:pointer;border-bottom:1px dashed currentColor;white-space:nowrap;display:inline-block;}
     .reveal-tel:hover{opacity:0.8;}
+  
+    /* ── WhatsApp flottant ── */
+    #wa-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:none;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);text-decoration:none;transition:all 0.3s;}
+    @media(max-width:1024px){#wa-float{display:flex;}}
+    #wa-float:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,0.6);}
+    #wa-float i{color:#fff;font-size:1.4rem;}
+    #wa-float .wa-tooltip{position:absolute;right:60px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.72rem;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
+    #wa-float:hover .wa-tooltip{opacity:1;}
   </style>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Impression mémoire et thèse Marseille — tarifs étudiants","provider":{"@type":"LocalBusiness","name":"Polyscribe","telephone":"+33496101280","address":{"@type":"PostalAddress","streetAddress":"90 Rue Edmond Rostand","postalCode":"13006","addressLocality":"Marseille","addressCountry":"FR"}},"serviceType":"Document printing and binding","areaServed":["Marseille","La Timone","Luminy","Marseille 13009","Marseille 13005","Marseille 13006"],"description":"Impression et reliure de mémoires, thèses et rapports à Marseille 13006. Tarifs étudiants spéciaux sur carte étudiante."}
@@ -227,9 +235,21 @@
 </head>
 <body>
   <!-- FLOATING BUTTON -->
+  <!-- Boutons flottants -->
   <a href="mailto:contact@polyscribe.fr" id="float-send" title="Envoyer mon fichier à imprimer">
     <i class="fas fa-paper-plane"></i><span>Envoyer mon fichier</span>
   </a>
+  <a id="wa-float" href="#" aria-label="Nous contacter sur WhatsApp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">WhatsApp</span>
+  </a>
+  <script>
+    (function(){
+      var n = '337' + '668' + '222' + '22';
+      var msg = encodeURIComponent('Bonjour Polyscribe, pouvez-vous me renseigner ?');
+      document.getElementById('wa-float').href = 'https://api.whatsapp.com/send?phone=' + n + '&text=' + msg;
+    })();
+  </script>
     <!-- NAVBAR -->
   <nav id="navbar">
     <a href="index.html" class="nav-brand">Polyscribe</a>
@@ -289,7 +309,7 @@
         <div class="lp-intro-visual">
           <div class="lp-stat reveal reveal-delay-1"><div class="lp-stat-num">Même</div><div class="lp-stat-label">Jour</div></div>
           <div class="lp-stat reveal reveal-delay-2"><div class="lp-stat-num">Sam.</div><div class="lp-stat-label">9h–11h30</div></div>
-          <div class="lp-stat reveal reveal-delay-3"><div class="lp-stat-num">3</div><div class="lp-stat-label">Types reliure</div></div>
+          <div class="lp-stat reveal reveal-delay-3"><div class="lp-stat-num">2</div><div class="lp-stat-label">Types reliure</div></div>
           <div class="lp-stat reveal reveal-delay-4"><div class="lp-stat-num">PDF</div><div class="lp-stat-label">Par email</div></div>
         </div>
       </div>
@@ -450,22 +470,16 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Spirale métallique</strong><span class="badge-rec">Populaire</span></td>
-              <td>À partir de 4€</td>
-              <td>Mémoires de master (M1, M2), rapports de stage</td>
-              <td>S'ouvre à plat, robuste</td>
-            </tr>
-            <tr>
-              <td><strong>Plastique (peigne)</strong></td>
+              <td><strong>Spirale plastique</strong><span class="badge-rec">Populaire</span></td>
               <td>À partir de 3€</td>
-              <td>Rapports, dossiers de soutenance</td>
+              <td>Rapports de stage, dossiers de soutenance</td>
               <td>Économique, solide, s'ouvre à plat</td>
             </tr>
             <tr>
-              <td><strong>Couverture rigide</strong></td>
-              <td>En option</td>
-              <td>Thèses, travaux avec couverture personnalisée</td>
-              <td>Couverture cartonnée</td>
+              <td><strong>Spirale métallique</strong></td>
+              <td>À partir de 4€</td>
+              <td>Mémoires de master (M1, M2), thèses</td>
+              <td>S'ouvre à plat, robuste, aspect premium</td>
             </tr>
           </tbody>
         </table>
