@@ -50,6 +50,11 @@
     /* ── Police de secours pendant chargement ── */
     @font-face{font-family:'DM Sans';font-display:swap;src:local('Arial');}
     @font-face{font-family:'Playfair Display';font-display:swap;src:local('Georgia');}
+
+    /* ── FontAwesome icônes critiques (inline pour éviter FOIT) ── */
+    .fab,.fas{display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;}
+    .fas{font-family:'Font Awesome 6 Free';font-weight:900;}
+    .fab{font-family:'Font Awesome 6 Brands';font-weight:400;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
@@ -636,7 +641,7 @@
       </div>
       <div class="gallery-mosaic">
         <div class="gm-item reveal">
-          <img src="img/gallery/photo5.webp" alt="Devanture boutique Polyscribe reprographie Marseille 13006 rue Edmond Rostand" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="700" height="527">
+          <img src="img/gallery/photo5.webp" alt="Devanture boutique Polyscribe reprographie Marseille 13006 rue Edmond Rostand" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="600" height="400">
           <div class="gm-overlay"></div>
           <span class="gm-caption">Notre boutique — 90 rue Edmond Rostand</span>
         </div>
@@ -646,7 +651,7 @@
           <span class="gm-caption">Intérieur &amp; accueil</span>
         </div>
         <div class="gm-item portrait reveal reveal-delay-2">
-          <img src="img/gallery/photo1.webp" alt="Formats d'impression disponibles A4 A3 A2 A1 A0 reprographie Marseille" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="400" height="200">
+          <img src="img/gallery/photo1.webp" alt="Formats d'impression disponibles A4 A3 A2 A1 A0 reprographie Marseille" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="600" height="511">
           <div class="gm-overlay"></div>
           <span class="gm-caption">Tous formats A6 à A0</span>
         </div>
@@ -666,7 +671,7 @@
           <span class="gm-caption">Salle de réunion à louer</span>
         </div>
         <div class="gm-item portrait reveal reveal-delay-1">
-          <img src="img/gallery/photo7.webp" alt="Tarifs impression A4 N&B couleur Polyscribe Marseille 13006" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="400" height="530">
+          <img src="img/gallery/photo7.webp" alt="Tarifs impression A4 N&B couleur Polyscribe Marseille 13006" loading="lazy" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="600" height="796">
           <div class="gm-overlay"></div>
           <span class="gm-caption">Nos tarifs d&rsquo;impression</span>
         </div>
@@ -1075,14 +1080,10 @@
         dotsContainer.appendChild(d);
       }
 
-      let cachedCardW = 0;
-      function updateCardW(){ cachedCardW = cards[0].getBoundingClientRect().width + 16; }
-      updateCardW();
-      window.addEventListener('resize', updateCardW);
-
       function goTo(n){
         current = (n+total)%total;
-        track.style.transform = `translateX(-${current * getVisible() * cachedCardW}px)`;
+        const cardW = cards[0].getBoundingClientRect().width + 16;
+        track.style.transform = `translateX(-${current * getVisible() * cardW}px)`;
         dotsContainer.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===current));
       }
 
