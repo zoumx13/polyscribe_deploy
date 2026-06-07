@@ -167,7 +167,8 @@
     .histoire-ligne{width:44px;height:3px;background:var(--gold);margin:1.5rem auto 0;}
 
     /* ── WhatsApp flottant ── */
-    #wa-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);text-decoration:none;transition:all 0.3s;}
+    #wa-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:none;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);text-decoration:none;transition:all 0.3s;}
+    @media(max-width:1024px){#wa-float{display:flex;}}
     #wa-float:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,0.6);}
     #wa-float i{color:#fff;font-size:1.4rem;}
     #wa-float .wa-tooltip{position:absolute;right:60px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.72rem;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
@@ -382,7 +383,7 @@
       {"@type":"Place","name":"Luminy"},
       {"@type":"Place","name":"Marseille 13006"},
       {"@type":"Place","name":"Marseille 13005"},
-      {"@type":"Place","name":"Marseille 13009"},{"@type":"Place","name":"Castellane"},{"@type":"Place","name":"Place Castellane Marseille"}
+      {"@type":"Place","name":"Marseille 13009"},{"@type":"Place","name":"Castellane"},{"@type":"Place","name":"Place Castellane Marseille"},{"@type":"Place","name":"Quartier Baille Marseille"},{"@type":"Place","name":"Quartier Périer Marseille"},{"@type":"Place","name":"Quartier Vauban Marseille"},{"@type":"Place","name":"Prado Marseille"},{"@type":"Place","name":"La Timone Marseille"},{"@type":"Place","name":"Vélodrome Marseille"}
     ],
     "serviceArea":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":43.2855,"longitude":5.3845},"geoRadius":"15000"},
     "logo":{"@type":"ImageObject","url":"https://www.polyscribe.fr/img/Logo.webp","width":260,"height":261},
@@ -528,8 +529,8 @@
     // Numéro WhatsApp reconstruit côté client — non lisible par les scrapers
     (function(){
       var n = '337' + '668' + '222' + '22';
-      var msg = encodeURIComponent('Bonjour Polyscribe, je souhaite imprimer un document.');
-      document.getElementById('wa-float').href = 'https://wa.me/' + n + '?text=' + msg;
+      var msg = encodeURIComponent('Bonjour Polyscribe, pouvez-vous me renseigner ?');
+      document.getElementById('wa-float').href = 'https://api.whatsapp.com/send?phone=' + n + '&text=' + msg;
     })();
   </script>
 
@@ -909,7 +910,7 @@
       <p>Polyscribe imprime et relie les <strong>rapports de stage</strong> pour tous les niveaux scolaires : <strong>BTS</strong> (tertiaire, industriel, commercial), lycéens et collégiens. Tarifs préférentiels sur présentation de la carte scolaire. Impression dans la journée, ouvert le samedi matin pour les urgences. À 2 minutes du métro Castellane, accessible depuis tous les établissements scolaires du 6e, 7e et 8e arrondissement.</p>
 
       <h3>Polyscribe — au cœur de Marseille, place Castellane</h3>
-      <p>Situé au 90 rue Edmond Rostand dans le <strong>6e arrondissement de Marseille</strong>, à 2 minutes à pied de la <strong>place Castellane</strong> (métro M1, M2 et tramway T3), Polyscribe est accessible depuis tout Marseille en moins de 20 minutes. Nous accueillons régulièrement des clients des quartiers Castellane, Prado, Vauban, Baille, Notre-Dame-du-Mont, Préfecture et République.</p>
+      <p>Situé au 90 rue Edmond Rostand dans le <strong>6e arrondissement de Marseille</strong>, à 2 minutes à pied de la <strong>place Castellane</strong> (métro M1, M2 et tramway T3), Polyscribe est accessible depuis tout Marseille en moins de 20 minutes. Nous accueillons régulièrement des clients des quartiers Castellane, Prado, Vauban, Baille, Périer, La Timone, Notre-Dame-du-Mont, Préfecture, République et du Vélodrome.</p>
       <h3>Tirage de plans architecte A0, A1, A2 à Marseille</h3>
       <p>Architectes, bureaux d'études, géomètres et étudiants en architecture nous font confiance pour l'<a href="plans-architecte-marseille.html">impression de plans grand format</a>. Plans de permis de construire, dossiers DCE, documents de chantier. Service express pour les urgences. Fichiers PDF, DWG, DXF acceptés.</p>
 
