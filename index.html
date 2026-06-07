@@ -32,7 +32,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -45,6 +46,10 @@
       --border:rgba(0,51,102,0.1);
       --radius:10px;--radius-sm:6px;
     }
+
+    /* ── Police de secours pendant chargement ── */
+    @font-face{font-family:'DM Sans';font-display:swap;src:local('Arial');}
+    @font-face{font-family:'Playfair Display';font-display:swap;src:local('Georgia');}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
@@ -492,7 +497,7 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="img/Logo.webp" alt="Polyscribe — reprographie impression Marseille 13006" class="hero-logo" loading="eager" fetchpriority="high" width="260" height="261">
+      <img src="img/Logo.webp" alt="Polyscribe — reprographie impression Marseille 13006" class="hero-logo" loading="eager" fetchpriority="high" width="180" height="181">
       <h1 class="hero-tagline">Reprographie à Marseille 13006 —<br>plans architecte, mémoires, copies et secrétariat</h1>
       <div class="hero-cta-group">
         <a href="tel:+33496101280" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span class="reveal-tel" title="Cliquer pour afficher">04&#160;96&#160;10&#160;12&#160;••</span></a>
