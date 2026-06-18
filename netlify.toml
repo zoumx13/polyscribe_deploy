@@ -29,6 +29,12 @@
   force = true
 
 [[redirects]]
+  from = "/impression-memoire-marseille.html"
+  to = "/etudiants.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

@@ -38,17 +38,9 @@
   <!-- LP Étudiants — fort volume de recherche -->
   <url>
     <loc>https://www.polyscribe.fr/etudiants.html</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- LP Impression mémoire — très ciblée longue traîne -->
-  <url>
-    <loc>https://www.polyscribe.fr/impression-memoire-marseille.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
   <!-- LP Plans architecte — audience pro à fort panier -->
