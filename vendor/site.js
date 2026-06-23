@@ -7,10 +7,10 @@
 
   // Périodes spéciales (remplacent l'horaire habituel pendant ces dates, incluses) :
   const EXCEPTIONS=[
-    {start:'2026-06-29',end:'2026-07-12',hours:{1:[[540,1020]],2:[[540,1020]],3:[[540,1020]],4:[[540,1020]],5:[[540,1020]]},label:'29 juin → 12 juillet',display:'Lun-Ven 9h–17h'},
+    {start:'2026-06-29',end:'2026-07-12',hours:{1:[[540,750],[780,1020]],2:[[540,750],[780,1020]],3:[[540,750],[780,1020]],4:[[540,750],[780,1020]],5:[[540,750],[780,1020]]},label:'29 juin → 12 juillet',display:'Lun-Ven 9h–12h30 / 13h–17h'},
     {start:'2026-07-13',end:'2026-07-31',hours:{1:[[540,720]],2:[[540,720]],3:[[540,720]],4:[[540,720]],5:[[540,720]]},label:'13 → 31 juillet',display:'Lun-Ven 9h–12h'},
-    {start:'2026-08-01',end:'2026-08-19',hours:{},label:'1er → 19 août',display:'Fermé'},
-    {start:'2026-08-20',end:'2026-08-31',hours:{1:[[540,900]],2:[[540,900]],3:[[540,900]],4:[[540,900]],5:[[540,900]]},label:'20 → 31 août',display:'Lun-Ven 9h–15h'}
+    {start:'2026-08-01',end:'2026-08-19',hours:{},label:'1er → 19 août',display:'Fermeture'},
+    {start:'2026-08-20',end:'2026-08-31',hours:{1:[[540,750],[780,900]],2:[[540,750],[780,900]],3:[[540,750],[780,900]],4:[[540,750],[780,900]],5:[[540,750],[780,900]]},label:'20 → 31 août',display:'Lun-Ven 9h–12h30 / 13h–15h'}
   ];
   // Dernier jour où une exception s'applique : le popup ne s'affiche plus après cette date.
   const POPUP_LAST_DAY = EXCEPTIONS[EXCEPTIONS.length-1].end; // '2026-08-31'
