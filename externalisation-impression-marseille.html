@@ -383,31 +383,17 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
       <p>Le présent site est soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
     </div>
   </div>
+  <div class="modal-overlay" id="summerModal">
+    <div class="modal-box">
+      <button class="modal-close" id="summerModalClose">✕</button>
+      <h2>Horaires d'été 2026</h2>
+      <div id="summerModalBody"></div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   <script>
-            // ── Statut Ouvert / Fermé ─────────────────────────────────────────────
-    (function(){
-      const H={1:[[510,750],[780,1050]],2:[[510,750],[780,1110]],3:[[510,750],[780,1050]],4:[[510,750],[780,1110]],5:[[510,750],[780,1110]],6:[[540,690]]};
-      const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-      const mins=d=>d.getHours()*60+d.getMinutes();
-      const fmt=(totalMins)=>{const h=Math.floor(totalMins/60),mn=totalMins%60;return h+'h'+(mn?String(mn).padStart(2,'0'):'');};
-      const isOpen=()=>{const n=new Date(),s=H[n.getDay()];return s&&s.some(([a,b])=>mins(n)>=a&&mins(n)<b);};
-      const next=()=>{
-        const n=new Date(),now=mins(n),today=n.getDay();
-        // 1. Chercher un créneau plus tard AUJOURD'HUI
-        const todaySlots=H[today]||[];
-        for(const [a,b] of todaySlots){if(a>now)return `Réouvre aujourd’hui à ${fmt(a)}`;}
-        // 2. Sinon chercher le prochain jour ouvré
-        for(let i=1;i<=7;i++){
-          const d=(today+i)%7,s=H[d];
-          if(s?.length) return 'Ouvre '+DAYS[d]+' à '+fmt(s[0][0]);
-        }
-        return 'Fermé';
-      };
-      const badge=document.getElementById('nav-status'),text=document.getElementById('sb-text');
-      if(isOpen()){badge.classList.add('open');text.textContent='Ouvert';}
-      else{badge.classList.add('closed');text.textContent='Fermé · '+next();}
-    })();
+            <script src="js/site.js"></script>
 
     // ── Navbar scroll ─────────────────────────────────────────────────────
     const navbar=document.getElementById('navbar');
