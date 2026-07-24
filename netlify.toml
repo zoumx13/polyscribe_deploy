@@ -34,6 +34,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/llms.txt"
+  to = "/llms.txt"
+  status = 200
+
 # ── Cache long pour le CSS partagé (mis à jour rarement) ──────────────────────
 [[headers]]
   for = "/css/*"

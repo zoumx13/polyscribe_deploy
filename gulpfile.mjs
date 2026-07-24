@@ -157,6 +157,7 @@ ${urls}
 
   fs2.writeFileSync('./dist/sitemap.xml', xml);
   fs2.copyFileSync('./robots.txt', './dist/robots.txt');
+  fs2.copyFileSync('./llms.txt', './dist/llms.txt');
   console.log('SEO files generated with date: ' + today);
   done();
 });
@@ -206,6 +207,7 @@ gulp.task('redirects', function(done) {
   const rules = [
     '/sitemap.xml  /sitemap.xml  200',
     '/robots.txt   /robots.txt   200',
+    '/llms.txt     /llms.txt     200',
     '/*            /index.html   200'
   ].join('\n');
   fs.writeFileSync('./dist/_redirects', rules);
