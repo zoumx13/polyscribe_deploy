@@ -320,19 +320,6 @@ footer a:hover{color:var(--gold);}
     <div class="scroll-indicator"><span></span></div>
   </section>
 
-  <!-- WhatsApp flottant -->
-  <a id="wa-float" href="#" aria-label="Nous contacter sur WhatsApp" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span class="wa-tooltip">WhatsApp</span>
-  </a>
-  <script>
-    // Numéro WhatsApp reconstruit côté client — non lisible par les scrapers
-    (function(){
-      var n = '337' + '668' + '222' + '22';
-      var msg = encodeURIComponent('Bonjour Polyscribe, pouvez-vous me renseigner ?');
-      document.getElementById('wa-float').href = 'https://api.whatsapp.com/send?phone=' + n + '&text=' + msg;
-    })();
-  </script>
 
   <!-- TRUST BAR -->
   <div class="trust-bar">
