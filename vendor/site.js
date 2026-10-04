@@ -148,7 +148,33 @@
       });
     });
   }
-  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(balance,120);});
+  // Rangées de boutons / étiquettes (largeurs variables) : on limite la largeur du bloc
+  // pour obtenir des lignes équilibrées (ex. 3+1 → 2+2, 7+3 → 5+5), le tout centré.
+  var SEL2='.lp-hero-cta,.lp-cta-group,.bde-list,.urgence-items,.trust-inner';
+  function rowsOf(kids){var r=[],top=null;kids.forEach(function(k){var t=k.offsetTop;if(top===null||Math.abs(t-top)>5){r.push(0);top=t;}r[r.length-1]++;});return r;}
+  function balanceRows(){
+    document.querySelectorAll(SEL2).forEach(function(g){
+      g.style.maxWidth='';g.style.marginLeft='';g.style.marginRight='';g.style.justifyContent='center';
+      var kids=Array.prototype.filter.call(g.children,function(k){return k.offsetWidth>0;});
+      var n=kids.length;if(n<3)return;
+      var before=rowsOf(kids);if(before.length<2)return;
+      var r=before.length,per=Math.ceil(n/r);
+      if(before[r-1]>=per-1&&before[0]-before[r-1]<=1)return;   // déjà équilibré
+      var gap=parseFloat(getComputedStyle(g).columnGap)||0,w=0;
+      for(var i=0;i<n;i+=per){
+        var sum=0,cnt=0;
+        for(var j=i;j<Math.min(i+per,n);j++){var cs=getComputedStyle(kids[j]);sum+=kids[j].getBoundingClientRect().width+parseFloat(cs.marginLeft)+parseFloat(cs.marginRight);cnt++;}
+        w=Math.max(w,sum+gap*(cnt-1));
+      }
+      var pad=parseFloat(getComputedStyle(g).paddingLeft)+parseFloat(getComputedStyle(g).paddingRight);
+      g.style.maxWidth=Math.ceil(w+pad+2)+'px';g.style.marginLeft='auto';g.style.marginRight='auto';
+      var after=rowsOf(kids);
+      if(after.length!==r||after[after.length-1]<before[r-1]){g.style.maxWidth='';g.style.marginLeft='';g.style.marginRight='';}
+    });
+  }
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){balance();balanceRows();},120);});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',balanceRows);else balanceRows();
+  window.addEventListener('load',balanceRows);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',balance);else balance();
   window.addEventListener('load',balance);
 })();
