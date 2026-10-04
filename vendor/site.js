@@ -112,7 +112,7 @@
     var to=addr(a),sp=label(a);
     a.setAttribute('data-revealed','1');
     a.setAttribute('title','Cliquer à nouveau pour ouvrir votre messagerie');
-    sp.style.textTransform='none';sp.style.letterSpacing='normal';
+    sp.style.textTransform='none';sp.style.letterSpacing='normal';sp.style.borderBottom='none';sp.removeAttribute('title');
     sp.textContent=to;
     copy(to,function(){
       sp.textContent=to+' — copiée ✓';
