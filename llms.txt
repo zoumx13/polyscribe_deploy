@@ -1,19 +1,57 @@
 # Polyscribe
 
-> Polyscribe est un commerce de reprographie et de secrétariat à Marseille (13006), situé 90 Rue Edmond Rostand, à proximité du métro Castellane. En activité depuis 1995. Impression et tirage de plans (A6 à A0, N&B et couleur), reliure, numérisation, secrétariat, et location de salle de réunion. Aucun minimum de commande.
+> Polyscribe est un commerce de reprographie et de secrétariat à Marseille (13006), situé 90 Rue Edmond Rostand, à proximité du métro Castellane. En activité depuis 1995. Impression et tirage de plans (A6 à A0, N&B et couleur), mémoires et thèses avec reliure, affiches et posters grand format, numérisation, secrétariat et location de salle de réunion. Aucun minimum de commande. Note Google : 4,5/5 (112 avis).
 
-Contact : 04 96 10 12 80 — contact@polyscribe.fr
-Adresse : 90 Rue Edmond Rostand, 13006 Marseille, France
-Métro : Castellane (M1, M2, T3)
+Dernière mise à jour : 4 octobre 2026
+
+## Contact
+
+- Demandes de devis, envoi de fichiers et questions : par e-mail de préférence, à contact [at] polyscribe.fr (remplacer [at] par @). Préciser le format, le nombre d'exemplaires et la reliure souhaitée.
+- Téléphone : 04 96 10 12 80
+- Adresse : 90 Rue Edmond Rostand, 13006 Marseille, France
+- Métro : Castellane (M1, M2, T3)
+
+## Horaires
+
+- Lundi et mercredi : 8h30–12h30 et 13h–17h30
+- Mardi, jeudi et vendredi : 8h30–12h30 et 13h–18h30
+- Samedi : 9h–11h30
+- Dimanche : fermé
+
+## Tarifs étudiants (impression de mémoires, thèses, rapports de stage)
+
+Tarifs étudiants, sur présentation de la carte étudiante ou d'un certificat de scolarité. Tarifs indicatifs.
+
+- Impression noir et blanc A4 : 0,10 € la page
+- Impression couleur A4 : 0,40 € la page
+- Reliure spirale plastique : à partir de 3 €
+- Reliure spirale métallique : à partir de 4 €
+- Reliure baguette thermocollée (sans impression sur la tranche) également disponible.
+- Pas de reliure dos carré collé.
+- Exemple : un rapport de fin d'études de 50 pages en noir et blanc avec reliure spirale plastique revient à environ 8 € (5 € d'impression + 3 € de reliure).
+- Délai : le jour même dans la plupart des cas ; ouvert le samedi matin pour les soutenances du début de semaine.
+
+## Tarifs grand format (traceur, jusqu'à l'A0)
+
+Tarifs indicatifs TTC par exemplaire. Le prix dépend surtout du taux de couverture d'encre : un plan technique (traits fins) revient moins cher qu'un visuel en aplats de couleur.
+
+| Type | A2 | A1 | A0 |
+|---|---|---|---|
+| Plans 90 g, N&B | 4,50 € | 6,50 € | 8,50 € |
+| Plans 90 g, couleur | 6,00 € | 8,00 € | 10,00 € |
+| Affiches fond blanc, 120 g | 15,00 € | 25,00 € | 40,00 € |
+| Affiches fond blanc, 170 g glossy | 20,00 € | 35,00 € | 55,00 € |
+| Posters fond couleur, 120 g | 30,00 € | 42,00 € | 67,00 € |
+| Posters fond couleur, 170 g glossy | 35,00 € | 52,50 € | 79,00 € |
 
 ## Services principaux
 
 - [Reprographie & impression particuliers](https://www.polyscribe.fr/reprographie-marseille.html): photocopies et impressions dès 1 exemplaire, sans minimum de commande.
-- [Plans architecte A0 A1 A2](https://www.polyscribe.fr/plans-architecte-marseille.html): tirage de plans, permis de construire, dossiers DCE, appels d'offres, format PDF ou image.
-- [Impression mémoire & rapport de stage](https://www.polyscribe.fr/etudiants.html): reliure spirale, tarifs étudiants, service le jour même, pour les étudiants de la Timone, Luminy et AMU.
-- [Impression affiche grand format](https://www.polyscribe.fr/impression-affiche-marseille.html): affiches A0 à A3 en couleur, plastification jusqu'à A3.
+- [Plans architecte A0 A1 A2](https://www.polyscribe.fr/plans-architecte-marseille.html): tirage de plans, permis de construire, dossiers DCE, appels d'offres.
+- [Impression mémoire, thèse & rapport de stage](https://www.polyscribe.fr/etudiants.html): tarifs étudiants, reliure spirale ou baguette thermocollée, service le jour même, pour les étudiants de la Timone, Luminy, AMU et des écoles de Marseille et d'Aix. Partenaire de BDE.
+- [Impression grand format : affiches, posters, plans](https://www.polyscribe.fr/impression-affiche-marseille.html): A2 à A0 sur traceur, papier 120 g ou 170 g glossy, plastification jusqu'à A3.
 - [Impression flyers](https://www.polyscribe.fr/impression-flyer-marseille.html): flyers A4 à A6, sans quantité minimale, service le jour même.
-- [Location de salle de réunion](https://www.polyscribe.fr/location-salle-marseille.html): salle équipée WiFi, jusqu'à 10 personnes, location à l'heure, demi-journée ou journée (96€ TTC/jour).
+- [Location de salle de réunion](https://www.polyscribe.fr/location-salle-marseille.html): salle équipée WiFi, jusqu'à 10 personnes, location à l'heure, demi-journée ou journée (96 € TTC/jour).
 - [Externalisation impression & secrétariat](https://www.polyscribe.fr/externalisation-impression-marseille.html): service externalisé pour entreprises, copies, courriers, reliures.
 
 ## Public professionnel
@@ -25,5 +63,5 @@ Métro : Castellane (M1, M2, T3)
 
 ## Informations pratiques
 
-- Horaires : lundi-vendredi, ouvert le samedi matin (9h-11h30). Horaires d'été spécifiques du 29 juin au 31 août.
-- Fichiers acceptés : PDF (recommandé), JPEG, PNG. Envoi par email ou dépôt sur clé USB en boutique.
+- Fichiers acceptés : PDF (recommandé), JPEG, PNG, TIFF ; DWG pour les plans. Envoi par e-mail ou dépôt sur clé USB en boutique.
+- Paiement : espèces, chèque (à partir de 10 €), carte bancaire (à partir de 20 €) ; virement pour les professionnels et associations.
