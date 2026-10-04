@@ -208,7 +208,9 @@ gulp.task('redirects', function(done) {
     '/robots.txt   /robots.txt   200',
     '/llms.txt     /llms.txt     200',
     '/impression-memoire-marseille.html  /etudiants.html  301!',
-    // Pas de fallback « /* → /index.html » : les URL inconnues renvoient 404.html (vrai code 404)
+    // Toujours en DERNIER : les URL inconnues renvoient 404.html avec un vrai code 404
+    // (les fichiers existants sont servis normalement, la règle ne les touche pas)
+    '/*  /404.html  404'
   ].join('\n');
   fs.writeFileSync('./dist/_redirects', rules);
 
