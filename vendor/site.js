@@ -120,3 +120,35 @@
     });
   });
 })();
+
+// ── Grilles de cartes équilibrées (PC / tablette) ─────────────────────────
+// Ex. 6 cartes sur 4 colonnes (4+2) → 3+3 ; 5 cartes → 3+2 centré ; dernière ligne toujours centrée
+(function(){
+  var SEL='.lp-services-grid,.lp-why-grid,.campus-grid,.pricing-grid,.steps-grid,.pain-grid,.profil-cards,.audience-cards,.geo-grid';
+  function reset(g){
+    g.style.display='';g.style.flexWrap='';g.style.justifyContent='';
+    Array.prototype.forEach.call(g.children,function(k){k.style.flex='';k.style.maxWidth='';});
+  }
+  function balance(){
+    document.querySelectorAll(SEL).forEach(function(g){
+      reset(g);
+      if(window.innerWidth<=768)return;
+      var kids=Array.prototype.filter.call(g.children,function(k){return k.offsetWidth>0;});
+      var n=kids.length;if(n<3)return;
+      var top=kids[0].offsetTop,c=0;
+      for(var i=0;i<n;i++){if(Math.abs(kids[i].offsetTop-top)<5)c++;else break;}
+      if(c>=n||c<1)return;
+      var rows=Math.ceil(n/c),cols=Math.ceil(n/rows);
+      if(n%cols===0&&cols===c)return;           // déjà équilibré
+      var gap=getComputedStyle(g).columnGap;if(!gap||gap==='normal')gap='0px';
+      g.style.display='flex';g.style.flexWrap='wrap';g.style.justifyContent='center';
+      kids.forEach(function(k){
+        var w='calc((100% - '+(cols-1)+' * '+gap+') / '+cols+')';
+        k.style.flex='0 0 '+w;k.style.maxWidth=w;
+      });
+    });
+  }
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(balance,120);});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',balance);else balance();
+  window.addEventListener('load',balance);
+})();
