@@ -84,3 +84,11 @@
     });
   }
 })();
+
+// ── E-mail : adresse assemblée au clic (absente du code de la page) ─────
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[data-u][data-d]');
+  if(!a)return;
+  e.preventDefault();
+  window.location.href='mai'+'lto:'+a.getAttribute('data-u')+'\u0040'+a.getAttribute('data-d')+(a.getAttribute('data-q')||'');
+});
