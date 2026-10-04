@@ -128,7 +128,6 @@ gulp.task('seo', function(done) {
   const pages = [
     {url:'',         freq:'weekly',  prio:'1.0'},
     {url:'etudiants.html',                          freq:'monthly', prio:'0.9'},
-    {url:'impression-memoire-marseille.html',        freq:'monthly', prio:'0.9'},
     {url:'plans-architecte-marseille.html',          freq:'monthly', prio:'0.85'},
     {url:'externalisation-impression-marseille.html',freq:'monthly', prio:'0.85'},
     {url:'reprographie-marseille.html',              freq:'monthly', prio:'0.8'},
@@ -208,7 +207,8 @@ gulp.task('redirects', function(done) {
     '/sitemap.xml  /sitemap.xml  200',
     '/robots.txt   /robots.txt   200',
     '/llms.txt     /llms.txt     200',
-    '/*            /index.html   200'
+    '/impression-memoire-marseille.html  /etudiants.html  301!',
+    // Pas de fallback « /* → /index.html » : les URL inconnues renvoient 404.html (vrai code 404)
   ].join('\n');
   fs.writeFileSync('./dist/_redirects', rules);
 
