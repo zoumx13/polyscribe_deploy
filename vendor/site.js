@@ -86,9 +86,37 @@
 })();
 
 // ── E-mail : adresse assemblée au clic (absente du code de la page) ─────
-document.addEventListener('click',function(e){
-  var a=e.target.closest&&e.target.closest('a[data-u][data-d]');
-  if(!a)return;
-  e.preventDefault();
-  window.location.href='mai'+'lto:'+a.getAttribute('data-u')+'\u0040'+a.getAttribute('data-d')+(a.getAttribute('data-q')||'');
-});
+// Téléphone : ouverture directe (le téléphone propose lui-même Gmail, Outlook…)
+// Ordinateur : 1er clic = l'adresse s'affiche dans le bouton ET est copiée ;
+//              2e clic  = ouverture du logiciel de messagerie par défaut
+(function(){
+  function addr(a){return a.getAttribute('data-u')+'@'+a.getAttribute('data-d');}
+  function isDesktop(){return window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;}
+  function openMail(a){window.location.href='mai'+'lto:'+addr(a)+(a.getAttribute('data-q')||'');}
+  function label(a){
+    var sp=a.querySelector('span');if(sp)return sp;
+    sp=document.createElement('span');
+    Array.prototype.slice.call(a.childNodes).forEach(function(n){if(n.nodeType===3&&n.textContent.trim()){a.removeChild(n);}});
+    a.appendChild(document.createTextNode(' '));a.appendChild(sp);return sp;
+  }
+  function copy(t,ok){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){});return;}
+    var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();try{if(document.execCommand('copy'))ok();}catch(e){}ta.remove();
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[data-u][data-d]');
+    if(!a)return;
+    e.preventDefault();
+    if(!isDesktop()||a.getAttribute('data-revealed')){openMail(a);return;}
+    var to=addr(a),sp=label(a);
+    a.setAttribute('data-revealed','1');
+    a.setAttribute('title','Cliquer à nouveau pour ouvrir votre messagerie');
+    sp.style.textTransform='none';sp.style.letterSpacing='normal';
+    sp.textContent=to;
+    copy(to,function(){
+      sp.textContent=to+' — copiée ✓';
+      setTimeout(function(){sp.textContent=to;},2500);
+    });
+  });
+})();
